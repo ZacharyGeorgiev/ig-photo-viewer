@@ -1,0 +1,85 @@
+default_platform :ios
+platform :ios do
+  # Global lanes
+  before_all do |lane, options|
+    # Set preferred xcode version
+    xcode_select("/Applications/Xcode-11.3.app")
+    # Install pods
+    cocoapods
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+  
+  # Public lanes  
+  desc "Release QA"
+  lane :release_qa do |options|
+    archive(
+      enterprise: true
+    )
+  end
+
+  desc "Release AppStore"
+  lane :release_app_store do |options|
+    archive(
+      enterprise: false
+    )
+    upload_appstore_connect
+  end
+
+  desc "Tests"
+  lane :tests do |options|
+    run_tests(
+      scheme: ENV["XC_SCHEME_NAME"]
+    )
+
+    danger(
+      danger_id: "unit-tests",
+      github_api_token: ENV["DANGER_GITLAB_API_TOKEN"],
+      verbose: true
+    )
+  end
+
+  desc "UI tests"
+  lane :ui_snapshot_tests do |options|
+    run_tests(
+      snapshot
+    )
+  end
+  
+  # Private lanes
+  private_lane :archive do |options|
+    # Differentiate between target type
+    export = (options[:enterprise] ? 'enterprise' : 'app-store')
+
+    # Build binary
+    gym(
+      scheme: ENV["XC_SCHEME_NAME"],
+      configuration: ENV["XC_CONFIGURATION"],
+      output_directory: 'build',
+      export_method: export,
+      output_name: ENV["XC_PRODUCT_NAME"],
+      clean: true,
+      include_bitcode: true,
+      include_symbols: true,
+      skip_package_ipa: false,
+      skip_build_archive: false,
+      skip_archive: false,
+    )
+  end
+
+  private_lane :upload_appstore_connect do |options|
+    # Upload to AppStore Connect
+    pilot(
+      username: ENV["AC_USER_NAME"],
+      ipa: "build/" + ENV["XC_PRODUCT_NAME"],
+      skip_submission: true,
+      skip_waiting_for_build_processing: true,
+      team_id: ENV["AC_TEAM_ID"],
+      app_platform: ENV["AC_PLATFORM"]
+    )
+  end
+end

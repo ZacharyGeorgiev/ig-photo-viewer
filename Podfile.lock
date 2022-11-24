@@ -1,0 +1,24 @@
+PODS:
+  - EasyPeasy (1.9.0)
+  - Resolver (1.5.0)
+  - SwiftLint (0.36.0)
+
+DEPENDENCIES:
+  - EasyPeasy
+  - Resolver
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - EasyPeasy
+    - Resolver
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  EasyPeasy: 19a84ef8f8bbcf925b9fecc29d1d78b7dab96718
+  Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
+  SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
+
+PODFILE CHECKSUM: a1c6cd6a36bbafbd58f6fd06c1d9fee58d4a40c5
+
+COCOAPODS: 1.11.3

@@ -1,1 +1,0 @@
-# ig-photo-viewer
