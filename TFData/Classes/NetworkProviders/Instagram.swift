@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum Instagram {
-    case getPosts
+    case getPosts(accessToken: String)
 }
 
 extension Instagram: TargetType {
@@ -35,7 +35,7 @@ extension Instagram: TargetType {
     
     var task: Task {
         switch self {
-        case .getPosts:
+        case .getPosts(let accessToken):
             return .requestParameters(
                 parameters: [
                     "fields": [
@@ -48,14 +48,12 @@ extension Instagram: TargetType {
                         "timestamp",
                         "username"
                     ].joined(separator: ","),
-                    "access_token": "IGQVJVVm14MklLcURHWVBTVUFxZAGhDd1BEYjFZATzQyYWltc1pkdEczekUzWHZAVQTB5RTBzd2EzTWNWTTVkcUp0SDNXN0xuSThmWEtmY2w3emwzVDQwbVJqWjg0VUZAJei1Ydk9wZAzRRS2wzdXRyQVpEcDZAueHBRR29oRzJN"
+                    "access_token": accessToken
                 ],
                 encoding: URLEncoding.default
             )
         }
     }
     
-    var headers: [String: String]? {
-        return nil
-    }
+    var headers: [String: String]? { return nil }
 }

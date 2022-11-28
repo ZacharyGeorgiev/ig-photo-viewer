@@ -50,6 +50,10 @@
 		FF4F47142934BF3600458A4C /* ZGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47132934BF3600458A4C /* ZGError.swift */; };
 		FF4F47192934C23500458A4C /* ImageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47182934C23500458A4C /* ImageMapper.swift */; };
 		FF4F471B2934C6E500458A4C /* Resolver+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471A2934C6E500458A4C /* Resolver+Extension.swift */; };
+		FF4F471D2934D49000458A4C /* AuthTokenWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471C2934D49000458A4C /* AuthTokenWorker.swift */; };
+		FF4F471F2934D4E600458A4C /* AuthTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471E2934D4E600458A4C /* AuthTokenService.swift */; };
+		FF4F47212934D50600458A4C /* NPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47202934D50600458A4C /* NPoint.swift */; };
+		FF4F47232934D65A00458A4C /* AuthTokenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47222934D65A00458A4C /* AuthTokenEntity.swift */; };
 		FF82DA662934AB9300D00EAF /* ImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA652934AB9300D00EAF /* ImagesWorker.swift */; };
 		FF82DA692934ABE700D00EAF /* IGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA682934ABE700D00EAF /* IGImage.swift */; };
 		FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */; };
@@ -184,6 +188,10 @@
 		FF4F47132934BF3600458A4C /* ZGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZGError.swift; sourceTree = "<group>"; };
 		FF4F47182934C23500458A4C /* ImageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMapper.swift; sourceTree = "<group>"; };
 		FF4F471A2934C6E500458A4C /* Resolver+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Extension.swift"; sourceTree = "<group>"; };
+		FF4F471C2934D49000458A4C /* AuthTokenWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenWorker.swift; sourceTree = "<group>"; };
+		FF4F471E2934D4E600458A4C /* AuthTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenService.swift; sourceTree = "<group>"; };
+		FF4F47202934D50600458A4C /* NPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPoint.swift; sourceTree = "<group>"; };
+		FF4F47222934D65A00458A4C /* AuthTokenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenEntity.swift; sourceTree = "<group>"; };
 		FF82DA652934AB9300D00EAF /* ImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesWorker.swift; sourceTree = "<group>"; };
 		FF82DA682934ABE700D00EAF /* IGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGImage.swift; sourceTree = "<group>"; };
 		FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGMediaType.swift; sourceTree = "<group>"; };
@@ -559,6 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				FF82DA652934AB9300D00EAF /* ImagesWorker.swift */,
+				FF4F471C2934D49000458A4C /* AuthTokenWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -630,6 +639,7 @@
 			isa = PBXGroup;
 			children = (
 				FF4F47102934BE5D00458A4C /* IGImageEntity.swift */,
+				FF4F47222934D65A00458A4C /* AuthTokenEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -646,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				FF4F470A2934B57200458A4C /* ImagesService.swift */,
+				FF4F471E2934D4E600458A4C /* AuthTokenService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -654,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				FF4F470D2934B97100458A4C /* Instagram.swift */,
+				FF4F47202934D50600458A4C /* NPoint.swift */,
 			);
 			path = NetworkProviders;
 			sourceTree = "<group>";
@@ -1096,6 +1108,9 @@
 				1D7899A32366FD6E0037DEFE /* TargetAssembly.swift in Sources */,
 				FF4F470E2934B97100458A4C /* Instagram.swift in Sources */,
 				FF4F47112934BE5D00458A4C /* IGImageEntity.swift in Sources */,
+				FF4F471F2934D4E600458A4C /* AuthTokenService.swift in Sources */,
+				FF4F47232934D65A00458A4C /* AuthTokenEntity.swift in Sources */,
+				FF4F47212934D50600458A4C /* NPoint.swift in Sources */,
 				FF4F470B2934B57200458A4C /* ImagesService.swift in Sources */,
 				FF4F47142934BF3600458A4C /* ZGError.swift in Sources */,
 			);
@@ -1106,6 +1121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */,
+				FF4F471D2934D49000458A4C /* AuthTokenWorker.swift in Sources */,
 				FF82DA662934AB9300D00EAF /* ImagesWorker.swift in Sources */,
 				FF82DA692934ABE700D00EAF /* IGImage.swift in Sources */,
 			);

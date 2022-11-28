@@ -15,10 +15,12 @@ struct ImagesService: ImagesWorker {
     @Injected private var instagramProvider: MoyaProvider<Instagram>
     @Injected private var jsonDecoder: JSONDecoder
     @Injected private var imageMapper: ImageMapper
+    @Injected private var authTokenWorker: AuthTokenWorker
     
     func getImages() async throws -> [IGImage] {
+        let authToken = await authTokenWorker.getToken()
         return try await withCheckedThrowingContinuation { continuation in
-            instagramProvider.request(.getPosts) { result in
+            instagramProvider.request(.getPosts(accessToken: authToken)) { result in
                 switch result {
                 case .success(let response):
                     guard let imageEntities = try? response.map(
