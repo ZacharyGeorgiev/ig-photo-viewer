@@ -1,24 +1,34 @@
 PODS:
-  - EasyPeasy (1.9.0)
+  - Alamofire (5.6.2)
+  - EasyPeasy (1.10.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - Resolver (1.5.0)
-  - SwiftLint (0.36.0)
+  - SwiftLint (0.49.1)
 
 DEPENDENCIES:
   - EasyPeasy
+  - Moya (~> 15.0)
   - Resolver
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - EasyPeasy
+    - Moya
     - Resolver
     - SwiftLint
 
 SPEC CHECKSUMS:
-  EasyPeasy: 19a84ef8f8bbcf925b9fecc29d1d78b7dab96718
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  EasyPeasy: b9b1bae024d21a7dfa9bad26d6826d88348cc6f1
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
-  SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
+  SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
-PODFILE CHECKSUM: a1c6cd6a36bbafbd58f6fd06c1d9fee58d4a40c5
+PODFILE CHECKSUM: 774f66a760cd373b16b9e3ab701e5a8d9a64ce00
 
 COCOAPODS: 1.11.3

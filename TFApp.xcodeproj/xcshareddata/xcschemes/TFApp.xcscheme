@@ -28,66 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DC7E9462366E6BE006DBA10"
-               BuildableName = "TFAppTests.xctest"
-               BlueprintName = "TFAppTests"
-               ReferencedContainer = "container:TFApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DC7E9512366E6BE006DBA10"
-               BuildableName = "TFAppUITests.xctest"
-               BlueprintName = "TFAppUITests"
-               ReferencedContainer = "container:TFApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DC7E9702366E75F006DBA10"
-               BuildableName = "TFDataTests.xctest"
-               BlueprintName = "TFDataTests"
-               ReferencedContainer = "container:TFApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DC7E9932366E76B006DBA10"
-               BuildableName = "TFDomainTests.xctest"
-               BlueprintName = "TFDomainTests"
-               ReferencedContainer = "container:TFApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DC7E9B52366E774006DBA10"
-               BuildableName = "TFPresentationTests.xctest"
-               BlueprintName = "TFPresentationTests"
-               ReferencedContainer = "container:TFApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DC7E9D92366E7DC006DBA10"
-               BuildableName = "TFExtensionsTests.xctest"
-               BlueprintName = "TFExtensionsTests"
-               ReferencedContainer = "container:TFApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

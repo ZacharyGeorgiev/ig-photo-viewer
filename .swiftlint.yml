@@ -1,0 +1,24 @@
+disabled_rules: # rule identifiers to exclude from running
+  - trailing_whitespace
+opt_in_rules:
+  - force_unwrapping
+  - empty_count
+  - convenience_type
+  - empty_string
+  - fatal_error_message
+  - first_where
+  - toggle_bool
+  - fallthrough
+  - identical_operands
+  - joined_default_parameter
+force_unwrapping: error
+excluded: # paths to ignore during linting.
+  - Pods
+  - Frameworks
+  - Tools
+# parameterized rules can be customized from this configuration file
+line_length: 500
+type_body_length: 250
+nesting:
+    type_level: 3
+reporter: "xcode" # reporter type (xcode, json, csv)

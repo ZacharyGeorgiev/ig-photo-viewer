@@ -43,6 +43,16 @@
 		D37C490123B5FCA9009A6C8E /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48F923B5FCA9009A6C8E /* LaunchViewController.swift */; };
 		D37C490423B5FCA9009A6C8E /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48FC23B5FCA9009A6C8E /* LaunchInteractor.swift */; };
 		E7C9AC63D82F7A73FDC3AEDA /* Pods_TFData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1736E7D3F3E6A9BF3B6145 /* Pods_TFData.framework */; };
+		FF4F47062934B41700458A4C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF4F47052934B41700458A4C /* .swiftlint.yml */; };
+		FF4F470B2934B57200458A4C /* ImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F470A2934B57200458A4C /* ImagesService.swift */; };
+		FF4F470E2934B97100458A4C /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F470D2934B97100458A4C /* Instagram.swift */; };
+		FF4F47112934BE5D00458A4C /* IGImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47102934BE5D00458A4C /* IGImageEntity.swift */; };
+		FF4F47142934BF3600458A4C /* ZGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47132934BF3600458A4C /* ZGError.swift */; };
+		FF4F47192934C23500458A4C /* ImageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47182934C23500458A4C /* ImageMapper.swift */; };
+		FF4F471B2934C6E500458A4C /* Resolver+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471A2934C6E500458A4C /* Resolver+Extension.swift */; };
+		FF82DA662934AB9300D00EAF /* ImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA652934AB9300D00EAF /* ImagesWorker.swift */; };
+		FF82DA692934ABE700D00EAF /* IGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA682934ABE700D00EAF /* IGImage.swift */; };
+		FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +177,16 @@
 		ED60D334F5D39439060F3E85 /* Pods-TFData.release qa dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFData.release qa dev.xcconfig"; path = "Target Support Files/Pods-TFData/Pods-TFData.release qa dev.xcconfig"; sourceTree = "<group>"; };
 		F65AB115A0C7C50E5744A58F /* Pods-TFApp.debug acc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFApp.debug acc.xcconfig"; path = "Target Support Files/Pods-TFApp/Pods-TFApp.debug acc.xcconfig"; sourceTree = "<group>"; };
 		FB5F50329EC971A8FF64ED46 /* Pods-TFData.debug acc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFData.debug acc.xcconfig"; path = "Target Support Files/Pods-TFData/Pods-TFData.debug acc.xcconfig"; sourceTree = "<group>"; };
+		FF4F47052934B41700458A4C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		FF4F470A2934B57200458A4C /* ImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesService.swift; sourceTree = "<group>"; };
+		FF4F470D2934B97100458A4C /* Instagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
+		FF4F47102934BE5D00458A4C /* IGImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGImageEntity.swift; sourceTree = "<group>"; };
+		FF4F47132934BF3600458A4C /* ZGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZGError.swift; sourceTree = "<group>"; };
+		FF4F47182934C23500458A4C /* ImageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMapper.swift; sourceTree = "<group>"; };
+		FF4F471A2934C6E500458A4C /* Resolver+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Extension.swift"; sourceTree = "<group>"; };
+		FF82DA652934AB9300D00EAF /* ImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesWorker.swift; sourceTree = "<group>"; };
+		FF82DA682934ABE700D00EAF /* IGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGImage.swift; sourceTree = "<group>"; };
+		FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGMediaType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,7 +289,12 @@
 		1D7899692366F69D0037DEFE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D7899A42366FD720037DEFE /* Usecases */,
+				FF4F47172934C22C00458A4C /* Mappers */,
+				FF4F47162934C22000458A4C /* NetworkProviders */,
+				FF4F47152934C20C00458A4C /* Services */,
+				FF4F470F2934BE4600458A4C /* Models */,
+				FF4F47122934BF2700458A4C /* General */,
+				FF4F47072934B52600458A4C /* Usecases */,
 				1D7899A12366FD650037DEFE /* Injection */,
 			);
 			path = Classes;
@@ -305,15 +330,9 @@
 			isa = PBXGroup;
 			children = (
 				1D7899A22366FD6E0037DEFE /* TargetAssembly.swift */,
+				FF4F471A2934C6E500458A4C /* Resolver+Extension.swift */,
 			);
 			path = Injection;
-			sourceTree = "<group>";
-		};
-		1D7899A42366FD720037DEFE /* Usecases */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Usecases;
 			sourceTree = "<group>";
 		};
 		1D7899AA2366FE750037DEFE /* Scene */ = {
@@ -338,6 +357,7 @@
 		1DC7E9282366E6BD006DBA10 = {
 			isa = PBXGroup;
 			children = (
+				FF4F47052934B41700458A4C /* .swiftlint.yml */,
 				1DC7E9332366E6BD006DBA10 /* TFApp */,
 				1DC7E9AF2366E774006DBA10 /* TFPresentation */,
 				1DC7E98D2366E76B006DBA10 /* TFDomain */,
@@ -384,6 +404,7 @@
 		1DC7E98D2366E76B006DBA10 /* TFDomain */ = {
 			isa = PBXGroup;
 			children = (
+				FF82DA672934ABD700D00EAF /* Models */,
 				1D7899662366F6880037DEFE /* Classes */,
 				1D7899672366F68B0037DEFE /* Supporting Files */,
 			);
@@ -537,6 +558,7 @@
 		D37C48EE23B5F474009A6C8E /* Workers */ = {
 			isa = PBXGroup;
 			children = (
+				FF82DA652934AB9300D00EAF /* ImagesWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -571,6 +593,86 @@
 				D37C48F923B5FCA9009A6C8E /* LaunchViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FF4F47072934B52600458A4C /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				FF4F47082934B53400458A4C /* Instagram */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
+		FF4F47082934B53400458A4C /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				FF4F470C2934B96200458A4C /* API */,
+				FF4F47092934B56100458A4C /* Services */,
+			);
+			path = Instagram;
+			sourceTree = "<group>";
+		};
+		FF4F47092934B56100458A4C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FF4F470C2934B96200458A4C /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FF4F470F2934BE4600458A4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF4F47102934BE5D00458A4C /* IGImageEntity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF4F47122934BF2700458A4C /* General */ = {
+			isa = PBXGroup;
+			children = (
+				FF4F47132934BF3600458A4C /* ZGError.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		FF4F47152934C20C00458A4C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FF4F470A2934B57200458A4C /* ImagesService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FF4F47162934C22000458A4C /* NetworkProviders */ = {
+			isa = PBXGroup;
+			children = (
+				FF4F470D2934B97100458A4C /* Instagram.swift */,
+			);
+			path = NetworkProviders;
+			sourceTree = "<group>";
+		};
+		FF4F47172934C22C00458A4C /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				FF4F47182934C23500458A4C /* ImageMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		FF82DA672934ABD700D00EAF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF82DA682934ABE700D00EAF /* IGImage.swift */,
+				FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -732,7 +834,7 @@
 					};
 					1DC7E98B2366E76B006DBA10 = {
 						CreatedOnToolsVersion = 11.0;
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1340;
 					};
 					1DC7E9AD2366E774006DBA10 = {
 						CreatedOnToolsVersion = 11.0;
@@ -771,6 +873,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF4F47062934B41700458A4C /* .swiftlint.yml in Resources */,
 				1DC7E9412366E6BE006DBA10 /* LaunchScreen.storyboard in Resources */,
 				1DC7E93B2366E6BE006DBA10 /* Assets.xcassets in Resources */,
 			);
@@ -988,7 +1091,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF4F47192934C23500458A4C /* ImageMapper.swift in Sources */,
+				FF4F471B2934C6E500458A4C /* Resolver+Extension.swift in Sources */,
 				1D7899A32366FD6E0037DEFE /* TargetAssembly.swift in Sources */,
+				FF4F470E2934B97100458A4C /* Instagram.swift in Sources */,
+				FF4F47112934BE5D00458A4C /* IGImageEntity.swift in Sources */,
+				FF4F470B2934B57200458A4C /* ImagesService.swift in Sources */,
+				FF4F47142934BF3600458A4C /* ZGError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +1105,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */,
+				FF82DA662934AB9300D00EAF /* ImagesWorker.swift in Sources */,
+				FF82DA692934ABE700D00EAF /* IGImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1107,7 +1219,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1161,7 +1273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1182,6 +1294,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "TFApp/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1205,6 +1318,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "TFApp/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1520,7 +1634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1540,6 +1654,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "TFApp/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1731,7 +1846,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1751,6 +1866,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "TFApp/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1936,7 +2052,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1957,6 +2073,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "TFApp/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2138,7 +2255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2159,6 +2276,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "TFApp/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2340,7 +2458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2361,6 +2479,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "TFApp/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

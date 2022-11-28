@@ -9,7 +9,7 @@ import Foundation
 import Resolver
 import TFExtensions
 
-// swiftlint:disable force_cast no_space_in_method_call
+// swiftlint:disable force_cast
 final class SingletonAssembly: Assembly {
     
     // MARK: Internal methods

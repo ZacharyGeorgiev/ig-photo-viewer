@@ -6,13 +6,13 @@
 //
 
 import TFDomain
+import Resolver
 
 final class LaunchInteractor {
     // MARK: Private properties
+    @Injected private var imagesWorker: ImagesWorker
+
     private var presenter: LaunchPresenter?
-    
-    // MARK: Lifecycle
-    init() { }
     
     // MARK: Internal methods
     func setup(with presenter: LaunchPresenter) {
@@ -23,6 +23,14 @@ final class LaunchInteractor {
 // MARK: - Requests
 extension LaunchInteractor {
     func handleInitialize() {
-        
+        Task { await fetchImages() }
+    }
+}
+
+private extension LaunchInteractor {
+    func fetchImages() async {
+        print("fetching images")
+        let images = try? await imagesWorker.getImages()
+        print("images \(images)")
     }
 }

@@ -4,7 +4,7 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 source 'https://cdn.cocoapods.org/'
 
 project 'TFApp', 'Debug DEV' => :debug, 'Debug ACC' => :debug, 'Debug PROD' => :debug
-platform :ios, '11.0'
+platform :ios, '15.5'
 
 use_frameworks!
 # ignore all warnings from all pods
@@ -31,6 +31,8 @@ end
 # MARK: Data
 target 'TFData' do
   injection_pods
+  
+  pod 'Moya', '~> 15.0'
 end
 
 # MARK: Domain
