@@ -54,6 +54,8 @@
 		FF4F471F2934D4E600458A4C /* AuthTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471E2934D4E600458A4C /* AuthTokenService.swift */; };
 		FF4F47212934D50600458A4C /* NPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47202934D50600458A4C /* NPoint.swift */; };
 		FF4F47232934D65A00458A4C /* AuthTokenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47222934D65A00458A4C /* AuthTokenEntity.swift */; };
+		FF4F47252934DB2300458A4C /* IGHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47242934DB2300458A4C /* IGHeaderView.swift */; };
+		FF4F472B2934E0AA00458A4C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F472A2934E0AA00458A4C /* UIColor+Extension.swift */; };
 		FF82DA662934AB9300D00EAF /* ImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA652934AB9300D00EAF /* ImagesWorker.swift */; };
 		FF82DA692934ABE700D00EAF /* IGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA682934ABE700D00EAF /* IGImage.swift */; };
 		FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */; };
@@ -192,6 +194,8 @@
 		FF4F471E2934D4E600458A4C /* AuthTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenService.swift; sourceTree = "<group>"; };
 		FF4F47202934D50600458A4C /* NPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPoint.swift; sourceTree = "<group>"; };
 		FF4F47222934D65A00458A4C /* AuthTokenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenEntity.swift; sourceTree = "<group>"; };
+		FF4F47242934DB2300458A4C /* IGHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGHeaderView.swift; sourceTree = "<group>"; };
+		FF4F472A2934E0AA00458A4C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FF82DA652934AB9300D00EAF /* ImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesWorker.swift; sourceTree = "<group>"; };
 		FF82DA682934ABE700D00EAF /* IGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGImage.swift; sourceTree = "<group>"; };
 		FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGMediaType.swift; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 		1D7899642366F5CF0037DEFE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FF4F47292934E0A300458A4C /* Extensions */,
+				FF4F47262934DC6300458A4C /* UIElements */,
 				86E87E78255006CC00ACC1EF /* Coordinator */,
 				1D7899AA2366FE750037DEFE /* Scene */,
 			);
@@ -354,10 +360,11 @@
 		1D7899AB2366FE7F0037DEFE /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				D37C48F223B5F5AF009A6C8E /* Interactor */,
-				D37C48F323B5F5B6009A6C8E /* Presenter */,
-				D37C48F423B5F5BC009A6C8E /* Router */,
-				D37C48F523B5F5C1009A6C8E /* View */,
+				D37C48F523B5F5C1009A6C8E /* Views */,
+				D37C48FC23B5FCA9009A6C8E /* LaunchInteractor.swift */,
+				D37C48F623B5FCA9009A6C8E /* LaunchPresenter.swift */,
+				D37C48F823B5FCA9009A6C8E /* LaunchRouter.swift */,
+				D37C48F923B5FCA9009A6C8E /* LaunchViewController.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -572,36 +579,12 @@
 			path = Workers;
 			sourceTree = "<group>";
 		};
-		D37C48F223B5F5AF009A6C8E /* Interactor */ = {
+		D37C48F523B5F5C1009A6C8E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D37C48FC23B5FCA9009A6C8E /* LaunchInteractor.swift */,
+				FF4F47242934DB2300458A4C /* IGHeaderView.swift */,
 			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		D37C48F323B5F5B6009A6C8E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				D37C48F623B5FCA9009A6C8E /* LaunchPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		D37C48F423B5F5BC009A6C8E /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				D37C48F823B5FCA9009A6C8E /* LaunchRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		D37C48F523B5F5C1009A6C8E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D37C48F923B5FCA9009A6C8E /* LaunchViewController.swift */,
-			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FF4F47072934B52600458A4C /* Usecases */ = {
@@ -676,6 +659,21 @@
 				FF4F47182934C23500458A4C /* ImageMapper.swift */,
 			);
 			path = Mappers;
+			sourceTree = "<group>";
+		};
+		FF4F47262934DC6300458A4C /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		FF4F47292934E0A300458A4C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF4F472A2934E0AA00458A4C /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FF82DA672934ABD700D00EAF /* Models */ = {
@@ -1134,9 +1132,11 @@
 				86E87E882550070000ACC1EF /* AppCoordinator.swift in Sources */,
 				D37C490023B5FCA9009A6C8E /* LaunchRouter.swift in Sources */,
 				D37C490423B5FCA9009A6C8E /* LaunchInteractor.swift in Sources */,
+				FF4F47252934DB2300458A4C /* IGHeaderView.swift in Sources */,
 				D37C48FE23B5FCA9009A6C8E /* LaunchPresenter.swift in Sources */,
 				86E87E7A255006D800ACC1EF /* Coordinator.swift in Sources */,
 				D37C490123B5FCA9009A6C8E /* LaunchViewController.swift in Sources */,
+				FF4F472B2934E0AA00458A4C /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EasyPeasy
 
 // MARK: Factory
 extension LaunchViewController {
@@ -25,6 +26,8 @@ public final class LaunchViewController: UIViewController {
     
     // MARK: Private properties
     private let interactor: LaunchInteractor
+    
+    private lazy var headerView: IGHeaderView = makeHeaderView()
     
     // MARK: Lifecycle
     required init(interactor: LaunchInteractor) {
@@ -53,6 +56,21 @@ extension LaunchViewController {
 // MARK: Private setup methods
 private extension LaunchViewController {
     func setup() {
+        view.backgroundColor = .white
+        view.addSubview(headerView)
         
+        headerView.easy.layout(
+            Top(),
+            Left(),
+            Right()
+        )
+    }
+}
+
+// MARK: Factory
+private extension LaunchViewController {
+    func makeHeaderView() -> IGHeaderView {
+        let headerView = IGHeaderView()
+        return headerView
     }
 }

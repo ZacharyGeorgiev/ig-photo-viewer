@@ -18,6 +18,7 @@ public final class AppCoordinator: Coordinator {
 
     public func start() {
         let launchVC = LaunchViewController(with: self)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.setViewControllers([launchVC], animated: false)
     }
 }
