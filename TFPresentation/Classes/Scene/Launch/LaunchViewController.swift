@@ -7,6 +7,7 @@
 
 import UIKit
 import EasyPeasy
+import TFExtensions
 
 // MARK: Factory
 extension LaunchViewController {
@@ -26,6 +27,11 @@ public final class LaunchViewController: UIViewController {
     
     // MARK: Private properties
     private let interactor: LaunchInteractor
+    private var images: [IGImageCell.ViewModel] {
+        didSet {
+            imagesTableView.reloadData()
+        }
+    }
     
     private lazy var headerView: IGHeaderView = makeHeaderView()
     private lazy var imagesTableView: UITableView = makeImagesTableView()
@@ -33,6 +39,7 @@ public final class LaunchViewController: UIViewController {
     // MARK: Lifecycle
     required init(interactor: LaunchInteractor) {
         self.interactor = interactor
+        self.images = []
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -51,7 +58,11 @@ public final class LaunchViewController: UIViewController {
 
 // MARK: Display logic
 extension LaunchViewController {
-    
+    func update(with viewModel: ViewModel) {
+        syncSafe {
+            self.images = viewModel
+        }
+    }
 }
 
 extension LaunchViewController: UITableViewDelegate {
@@ -62,19 +73,15 @@ extension LaunchViewController: UITableViewDelegate {
 
 extension LaunchViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return images.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: IGImageCell.identifier, for: indexPath) as? IGImageCell else {
             return UITableViewCell()
         }
-        cell.update(with: .init(
-            username: "_zachary.g_",
-            image: UIImage(named: "igSampleImage"),
-            caption: "_zachary.g_ Had a blast the other day! Party was lit 🤪",
-            timestamp: "5 hours ago"
-        ))
+        let image = images[indexPath.row]
+        cell.update(with: image)
         cell.selectionStyle = .none
         
         return cell
@@ -117,4 +124,9 @@ private extension LaunchViewController {
         tableView.separatorStyle = .none
         return tableView
     }
+}
+
+// MARK: Model
+extension LaunchViewController {
+    typealias ViewModel = [IGImageCell.ViewModel]
 }

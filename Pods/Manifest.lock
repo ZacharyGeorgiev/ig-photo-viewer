@@ -5,12 +5,14 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - Nuke (9.5.0)
   - Resolver (1.5.0)
   - SwiftLint (0.49.1)
 
 DEPENDENCIES:
   - EasyPeasy
   - Moya (~> 15.0)
+  - Nuke (~> 9.0)
   - Resolver
   - SwiftLint
 
@@ -19,6 +21,7 @@ SPEC REPOS:
     - Alamofire
     - EasyPeasy
     - Moya
+    - Nuke
     - Resolver
     - SwiftLint
 
@@ -26,9 +29,10 @@ SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   EasyPeasy: b9b1bae024d21a7dfa9bad26d6826d88348cc6f1
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  Nuke: 6f400a4ea957e09149ec335a3c6acdcc814d89e4
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
-PODFILE CHECKSUM: 774f66a760cd373b16b9e3ab701e5a8d9a64ce00
+PODFILE CHECKSUM: 64cf295240d503256dfd61aa685a9adc8f2d0c67
 
 COCOAPODS: 1.11.3

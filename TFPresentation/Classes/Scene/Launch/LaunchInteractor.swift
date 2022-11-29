@@ -23,7 +23,11 @@ final class LaunchInteractor {
 // MARK: - Requests
 extension LaunchInteractor {
     func handleInitialize() {
-        Task { await fetchImages() }
+        Task {
+            let images = try? await imagesWorker.getImages()
+            guard let images = images else { return }
+            presenter?.presentInitialize(with: images)
+        }
     }
 }
 

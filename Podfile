@@ -26,6 +26,7 @@ target 'TFPresentation' do
   injection_pods
 
   pod 'EasyPeasy'
+  pod 'Nuke', '~> 9.0'
 end
 
 # MARK: Data

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import EasyPeasy
+import Nuke
 
 class IGImageCell: UITableViewCell {
     // MARK: Public properties
@@ -34,8 +35,10 @@ class IGImageCell: UITableViewCell {
 
 extension IGImageCell {
     func update(with viewModel: ViewModel) {
+        let imageRequest = ImageRequest(url: viewModel.imageUrl)
+        Nuke.loadImage(with: imageRequest, into: postImageView)
+        
         usernameLabel.text = viewModel.username
-        postImageView.image = viewModel.image
         captionLabel.text = viewModel.caption
         timestampLabel.text = viewModel.timestamp
     }
@@ -46,7 +49,7 @@ private extension IGImageCell {
     func setup() {
         addSubview(stackView)
         
-        postImageView.easy.layout(Height(0.4 * UIScreen.main.bounds.height))
+        postImageView.easy.layout(Height(0.45 * UIScreen.main.bounds.height))
         
         [usernameLabel,
          captionLabel,
@@ -85,7 +88,8 @@ private extension IGImageCell {
     
     func makePostImageView() -> UIImageView {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }
     
@@ -128,7 +132,7 @@ private extension IGImageCell {
 extension IGImageCell {
     struct ViewModel {
         let username: String
-        let image: UIImage?
+        let imageUrl: URL
         let caption: String
         let timestamp: String
     }

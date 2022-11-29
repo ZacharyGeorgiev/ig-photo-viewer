@@ -178,42 +178,49 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug ACC" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
 fi
 if [[ "$CONFIGURATION" == "Debug DEV" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
 fi
 if [[ "$CONFIGURATION" == "Debug PROD" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
 fi
 if [[ "$CONFIGURATION" == "Release AppStore" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
 fi
 if [[ "$CONFIGURATION" == "Release QA ACC" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
 fi
 if [[ "$CONFIGURATION" == "Release QA DEV" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
 fi
 if [[ "$CONFIGURATION" == "Release QA PROD" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
 fi
