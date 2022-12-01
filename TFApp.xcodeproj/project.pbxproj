@@ -44,11 +44,11 @@
 		D37C490423B5FCA9009A6C8E /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48FC23B5FCA9009A6C8E /* LaunchInteractor.swift */; };
 		E7C9AC63D82F7A73FDC3AEDA /* Pods_TFData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1736E7D3F3E6A9BF3B6145 /* Pods_TFData.framework */; };
 		FF4F47062934B41700458A4C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF4F47052934B41700458A4C /* .swiftlint.yml */; };
-		FF4F470B2934B57200458A4C /* ImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F470A2934B57200458A4C /* ImagesService.swift */; };
+		FF4F470B2934B57200458A4C /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F470A2934B57200458A4C /* PostsService.swift */; };
 		FF4F470E2934B97100458A4C /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F470D2934B97100458A4C /* Instagram.swift */; };
-		FF4F47112934BE5D00458A4C /* IGImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47102934BE5D00458A4C /* IGImageEntity.swift */; };
+		FF4F47112934BE5D00458A4C /* IGPostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47102934BE5D00458A4C /* IGPostEntity.swift */; };
 		FF4F47142934BF3600458A4C /* ZGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47132934BF3600458A4C /* ZGError.swift */; };
-		FF4F47192934C23500458A4C /* ImageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47182934C23500458A4C /* ImageMapper.swift */; };
+		FF4F47192934C23500458A4C /* PostMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47182934C23500458A4C /* PostMapper.swift */; };
 		FF4F471B2934C6E500458A4C /* Resolver+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471A2934C6E500458A4C /* Resolver+Extension.swift */; };
 		FF4F471D2934D49000458A4C /* AuthTokenWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471C2934D49000458A4C /* AuthTokenWorker.swift */; };
 		FF4F471F2934D4E600458A4C /* AuthTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471E2934D4E600458A4C /* AuthTokenService.swift */; };
@@ -59,10 +59,17 @@
 		FF4F472D2934E77F00458A4C /* IGImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F472C2934E77F00458A4C /* IGImageCell.swift */; };
 		FF4F472F2934E8A900458A4C /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F472E2934E8A900458A4C /* UIFont+Extension.swift */; };
 		FF6B0FDA293662B7008C07B4 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FD9293662B7008C07B4 /* UIEdgeInsets+Extension.swift */; };
-		FF6B0FDC29366419008C07B4 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FDB29366419008C07B4 /* UIStackView+Extension.swift */; };
 		FF6B0FDF29366914008C07B4 /* GlobalDispatchQueueHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FDE29366913008C07B4 /* GlobalDispatchQueueHelpers.swift */; };
-		FF82DA662934AB9300D00EAF /* ImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA652934AB9300D00EAF /* ImagesWorker.swift */; };
-		FF82DA692934ABE700D00EAF /* IGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA682934ABE700D00EAF /* IGImage.swift */; };
+		FF6B0FE329390FF2008C07B4 /* MediaUrlWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FE229390FF2008C07B4 /* MediaUrlWorker.swift */; };
+		FF6B0FE52939106D008C07B4 /* MediaUrlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FE42939106D008C07B4 /* MediaUrlService.swift */; };
+		FF6B0FE729391244008C07B4 /* MediaUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FE629391244008C07B4 /* MediaUrlEntity.swift */; };
+		FF6B0FE929391297008C07B4 /* MediaUrlMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FE829391297008C07B4 /* MediaUrlMapper.swift */; };
+		FF6B0FEB2939165C008C07B4 /* MediaUrlsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FEA2939165C008C07B4 /* MediaUrlsMapper.swift */; };
+		FF6B0FED29391777008C07B4 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FEC29391777008C07B4 /* Sequence+Extensions.swift */; };
+		FF6B0FEF293918F7008C07B4 /* MediaTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FEE293918F7008C07B4 /* MediaTypeMapper.swift */; };
+		FF6B0FF129391BE2008C07B4 /* PostsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FF029391BE2008C07B4 /* PostsMapper.swift */; };
+		FF82DA662934AB9300D00EAF /* PostsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA652934AB9300D00EAF /* PostsWorker.swift */; };
+		FF82DA692934ABE700D00EAF /* IGPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA682934ABE700D00EAF /* IGPost.swift */; };
 		FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */; };
 /* End PBXBuildFile section */
 
@@ -189,11 +196,11 @@
 		F65AB115A0C7C50E5744A58F /* Pods-TFApp.debug acc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFApp.debug acc.xcconfig"; path = "Target Support Files/Pods-TFApp/Pods-TFApp.debug acc.xcconfig"; sourceTree = "<group>"; };
 		FB5F50329EC971A8FF64ED46 /* Pods-TFData.debug acc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFData.debug acc.xcconfig"; path = "Target Support Files/Pods-TFData/Pods-TFData.debug acc.xcconfig"; sourceTree = "<group>"; };
 		FF4F47052934B41700458A4C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		FF4F470A2934B57200458A4C /* ImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesService.swift; sourceTree = "<group>"; };
+		FF4F470A2934B57200458A4C /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		FF4F470D2934B97100458A4C /* Instagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
-		FF4F47102934BE5D00458A4C /* IGImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGImageEntity.swift; sourceTree = "<group>"; };
+		FF4F47102934BE5D00458A4C /* IGPostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGPostEntity.swift; sourceTree = "<group>"; };
 		FF4F47132934BF3600458A4C /* ZGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZGError.swift; sourceTree = "<group>"; };
-		FF4F47182934C23500458A4C /* ImageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMapper.swift; sourceTree = "<group>"; };
+		FF4F47182934C23500458A4C /* PostMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMapper.swift; sourceTree = "<group>"; };
 		FF4F471A2934C6E500458A4C /* Resolver+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Extension.swift"; sourceTree = "<group>"; };
 		FF4F471C2934D49000458A4C /* AuthTokenWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenWorker.swift; sourceTree = "<group>"; };
 		FF4F471E2934D4E600458A4C /* AuthTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenService.swift; sourceTree = "<group>"; };
@@ -204,10 +211,17 @@
 		FF4F472C2934E77F00458A4C /* IGImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGImageCell.swift; sourceTree = "<group>"; };
 		FF4F472E2934E8A900458A4C /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		FF6B0FD9293662B7008C07B4 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
-		FF6B0FDB29366419008C07B4 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		FF6B0FDE29366913008C07B4 /* GlobalDispatchQueueHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDispatchQueueHelpers.swift; sourceTree = "<group>"; };
-		FF82DA652934AB9300D00EAF /* ImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesWorker.swift; sourceTree = "<group>"; };
-		FF82DA682934ABE700D00EAF /* IGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGImage.swift; sourceTree = "<group>"; };
+		FF6B0FE229390FF2008C07B4 /* MediaUrlWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaUrlWorker.swift; sourceTree = "<group>"; };
+		FF6B0FE42939106D008C07B4 /* MediaUrlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaUrlService.swift; sourceTree = "<group>"; };
+		FF6B0FE629391244008C07B4 /* MediaUrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaUrlEntity.swift; sourceTree = "<group>"; };
+		FF6B0FE829391297008C07B4 /* MediaUrlMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaUrlMapper.swift; sourceTree = "<group>"; };
+		FF6B0FEA2939165C008C07B4 /* MediaUrlsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaUrlsMapper.swift; sourceTree = "<group>"; };
+		FF6B0FEC29391777008C07B4 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		FF6B0FEE293918F7008C07B4 /* MediaTypeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTypeMapper.swift; sourceTree = "<group>"; };
+		FF6B0FF029391BE2008C07B4 /* PostsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsMapper.swift; sourceTree = "<group>"; };
+		FF82DA652934AB9300D00EAF /* PostsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsWorker.swift; sourceTree = "<group>"; };
+		FF82DA682934ABE700D00EAF /* IGPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGPost.swift; sourceTree = "<group>"; };
 		FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGMediaType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -584,8 +598,9 @@
 		D37C48EE23B5F474009A6C8E /* Workers */ = {
 			isa = PBXGroup;
 			children = (
-				FF82DA652934AB9300D00EAF /* ImagesWorker.swift */,
+				FF82DA652934AB9300D00EAF /* PostsWorker.swift */,
 				FF4F471C2934D49000458A4C /* AuthTokenWorker.swift */,
+				FF6B0FE229390FF2008C07B4 /* MediaUrlWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -633,8 +648,9 @@
 		FF4F470F2934BE4600458A4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FF4F47102934BE5D00458A4C /* IGImageEntity.swift */,
+				FF4F47102934BE5D00458A4C /* IGPostEntity.swift */,
 				FF4F47222934D65A00458A4C /* AuthTokenEntity.swift */,
+				FF6B0FE629391244008C07B4 /* MediaUrlEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -650,8 +666,9 @@
 		FF4F47152934C20C00458A4C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FF4F470A2934B57200458A4C /* ImagesService.swift */,
+				FF4F470A2934B57200458A4C /* PostsService.swift */,
 				FF4F471E2934D4E600458A4C /* AuthTokenService.swift */,
+				FF6B0FE42939106D008C07B4 /* MediaUrlService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -668,7 +685,11 @@
 		FF4F47172934C22C00458A4C /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
-				FF4F47182934C23500458A4C /* ImageMapper.swift */,
+				FF4F47182934C23500458A4C /* PostMapper.swift */,
+				FF6B0FE829391297008C07B4 /* MediaUrlMapper.swift */,
+				FF6B0FEA2939165C008C07B4 /* MediaUrlsMapper.swift */,
+				FF6B0FEE293918F7008C07B4 /* MediaTypeMapper.swift */,
+				FF6B0FF029391BE2008C07B4 /* PostsMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -686,7 +707,6 @@
 				FF4F472A2934E0AA00458A4C /* UIColor+Extension.swift */,
 				FF4F472E2934E8A900458A4C /* UIFont+Extension.swift */,
 				FF6B0FD9293662B7008C07B4 /* UIEdgeInsets+Extension.swift */,
-				FF6B0FDB29366419008C07B4 /* UIStackView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -695,6 +715,7 @@
 			isa = PBXGroup;
 			children = (
 				FF6B0FDE29366913008C07B4 /* GlobalDispatchQueueHelpers.swift */,
+				FF6B0FEC29391777008C07B4 /* Sequence+Extensions.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -702,7 +723,7 @@
 		FF82DA672934ABD700D00EAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FF82DA682934ABE700D00EAF /* IGImage.swift */,
+				FF82DA682934ABE700D00EAF /* IGPost.swift */,
 				FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */,
 			);
 			path = Models;
@@ -1124,15 +1145,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF4F47192934C23500458A4C /* ImageMapper.swift in Sources */,
+				FF6B0FE52939106D008C07B4 /* MediaUrlService.swift in Sources */,
+				FF4F47192934C23500458A4C /* PostMapper.swift in Sources */,
+				FF6B0FEF293918F7008C07B4 /* MediaTypeMapper.swift in Sources */,
 				FF4F471B2934C6E500458A4C /* Resolver+Extension.swift in Sources */,
 				1D7899A32366FD6E0037DEFE /* TargetAssembly.swift in Sources */,
 				FF4F470E2934B97100458A4C /* Instagram.swift in Sources */,
-				FF4F47112934BE5D00458A4C /* IGImageEntity.swift in Sources */,
+				FF6B0FE929391297008C07B4 /* MediaUrlMapper.swift in Sources */,
+				FF4F47112934BE5D00458A4C /* IGPostEntity.swift in Sources */,
+				FF6B0FEB2939165C008C07B4 /* MediaUrlsMapper.swift in Sources */,
 				FF4F471F2934D4E600458A4C /* AuthTokenService.swift in Sources */,
+				FF6B0FF129391BE2008C07B4 /* PostsMapper.swift in Sources */,
+				FF6B0FE729391244008C07B4 /* MediaUrlEntity.swift in Sources */,
 				FF4F47232934D65A00458A4C /* AuthTokenEntity.swift in Sources */,
 				FF4F47212934D50600458A4C /* NPoint.swift in Sources */,
-				FF4F470B2934B57200458A4C /* ImagesService.swift in Sources */,
+				FF4F470B2934B57200458A4C /* PostsService.swift in Sources */,
 				FF4F47142934BF3600458A4C /* ZGError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1143,8 +1170,9 @@
 			files = (
 				FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */,
 				FF4F471D2934D49000458A4C /* AuthTokenWorker.swift in Sources */,
-				FF82DA662934AB9300D00EAF /* ImagesWorker.swift in Sources */,
-				FF82DA692934ABE700D00EAF /* IGImage.swift in Sources */,
+				FF6B0FE329390FF2008C07B4 /* MediaUrlWorker.swift in Sources */,
+				FF82DA662934AB9300D00EAF /* PostsWorker.swift in Sources */,
+				FF82DA692934ABE700D00EAF /* IGPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,7 +1185,6 @@
 				D37C490023B5FCA9009A6C8E /* LaunchRouter.swift in Sources */,
 				D37C490423B5FCA9009A6C8E /* LaunchInteractor.swift in Sources */,
 				FF4F47252934DB2300458A4C /* IGHeaderView.swift in Sources */,
-				FF6B0FDC29366419008C07B4 /* UIStackView+Extension.swift in Sources */,
 				D37C48FE23B5FCA9009A6C8E /* LaunchPresenter.swift in Sources */,
 				86E87E7A255006D800ACC1EF /* Coordinator.swift in Sources */,
 				D37C490123B5FCA9009A6C8E /* LaunchViewController.swift in Sources */,
@@ -1171,6 +1198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6B0FED29391777008C07B4 /* Sequence+Extensions.swift in Sources */,
 				FF6B0FDF29366914008C07B4 /* GlobalDispatchQueueHelpers.swift in Sources */,
 				C2F85C362747B540007FF072 /* Assembly.swift in Sources */,
 			);

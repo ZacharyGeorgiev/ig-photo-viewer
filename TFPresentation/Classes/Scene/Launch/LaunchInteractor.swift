@@ -10,7 +10,7 @@ import Resolver
 
 final class LaunchInteractor {
     // MARK: Private properties
-    @Injected private var imagesWorker: ImagesWorker
+    @Injected private var postsWorker: PostsWorker
 
     private var presenter: LaunchPresenter?
     
@@ -24,9 +24,8 @@ final class LaunchInteractor {
 extension LaunchInteractor {
     func handleInitialize() {
         Task {
-            let images = try? await imagesWorker.getImages()
-            guard let images = images else { return }
-            presenter?.presentInitialize(with: images)
+            guard let posts = try? await postsWorker.getPosts() else { return }
+            presenter?.presentInitialize(with: posts)
         }
     }
 }

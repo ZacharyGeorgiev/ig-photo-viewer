@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import EasyPeasy
 import Nuke
+import TFDomain
 
 class IGImageCell: UITableViewCell {
     // MARK: Public properties
@@ -35,7 +36,7 @@ class IGImageCell: UITableViewCell {
 
 extension IGImageCell {
     func update(with viewModel: ViewModel) {
-        let imageRequest = ImageRequest(url: viewModel.imageUrl)
+        let imageRequest = ImageRequest(url: viewModel.mediaUrl)
         Nuke.loadImage(with: imageRequest, into: postImageView)
         
         usernameLabel.text = viewModel.username
@@ -132,7 +133,8 @@ private extension IGImageCell {
 extension IGImageCell {
     struct ViewModel {
         let username: String
-        let imageUrl: URL
+        let mediaUrl: URL
+        let type: IGMediaType
         let caption: String
         let timestamp: String
     }

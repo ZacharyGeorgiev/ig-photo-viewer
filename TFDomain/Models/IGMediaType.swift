@@ -9,6 +9,6 @@
 import Foundation
 
 public enum IGMediaType {
-    case image
-    case carousel
+    case image(mediaUrl: URL)
+    case carousel(mediaUrls: [URL])
 }

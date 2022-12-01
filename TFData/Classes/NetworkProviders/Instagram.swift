@@ -11,6 +11,7 @@ import Moya
 
 enum Instagram {
     case getPosts(accessToken: String)
+    case getPost(id: String, accessToken: String)
 }
 
 extension Instagram: TargetType {
@@ -23,12 +24,14 @@ extension Instagram: TargetType {
         switch self {
         case .getPosts:
             return "/me/media"
+        case .getPost(let id, _):
+            return "/\(id)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getPosts:
+        case .getPosts, .getPost:
             return .get
         }
     }
@@ -46,7 +49,19 @@ extension Instagram: TargetType {
                         "permalink",
                         "thumbnail_url",
                         "timestamp",
-                        "username"
+                        "username",
+                        "children"
+                    ].joined(separator: ","),
+                    "access_token": accessToken
+                ],
+                encoding: URLEncoding.default
+            )
+        case .getPost(_, let accessToken):
+            return .requestParameters(
+                parameters: [
+                    "fields": [
+                        "id",
+                        "media_url"
                     ].joined(separator: ","),
                     "access_token": accessToken
                 ],

@@ -16,10 +16,15 @@ public final class TargetAssembly: Assembly {
     
     // MARK: Public methods
     public func assemble(with resolver: Resolver) {
-        resolver.register(ImagesWorker.self, ImagesService.init)
+        resolver.register(PostsWorker.self, PostsService.init)
         resolver.register(AuthTokenWorker.self, AuthTokenService.init)
+        resolver.register(MediaUrlWorker.self, MediaUrlService.init)
         
-        resolver.register(ImageMapper.self, ImageMapper.init)
+        resolver.register(PostMapper.self, PostMapper.init)
+        resolver.register(PostsMapper.self, PostsMapper.init)
+        resolver.register(MediaTypeMapper.self, MediaTypeMapper.init)
+        resolver.register(MediaUrlMapper.self, MediaUrlMapper.init)
+        resolver.register(MediaUrlsMapper.self, MediaUrlsMapper.init)
         
         resolver.register { MoyaProvider<Instagram>() }
         resolver.register { MoyaProvider<NPoint>() }

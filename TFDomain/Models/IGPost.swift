@@ -1,5 +1,5 @@
 //
-//  IGImage.swift
+//  IGPost.swift
 //  TFDomain
 //
 //  Created by Zahari Georgiev on 28/11/2022.
@@ -8,11 +8,10 @@
 
 import Foundation
 
-public struct IGImage {
+public struct IGPost {
     public let id: String
     public let caption: String
     public let type: IGMediaType
-    public let url: URL
     public let timestamp: Date
     public let username: String
     
@@ -20,15 +19,24 @@ public struct IGImage {
         id: String,
         caption: String,
         type: IGMediaType,
-        url: URL,
         timestamp: Date,
         username: String
     ) {
         self.id = id
         self.caption = caption
         self.type = type
-        self.url = url
         self.timestamp = timestamp
         self.username = username
+    }
+}
+
+public extension IGPost {
+    var mediaUrl: URL? {
+        switch type {
+        case .image(let mediaUrl):
+            return mediaUrl
+        case .carousel(let mediaUrls):
+            return mediaUrls.first
+        }
     }
 }
