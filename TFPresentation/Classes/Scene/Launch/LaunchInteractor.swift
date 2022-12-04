@@ -23,9 +23,11 @@ final class LaunchInteractor {
 // MARK: - Requests
 extension LaunchInteractor {
     func handleInitialize() {
+        presenter?.present(isLoading: true)
         Task {
             guard let posts = try? await postsWorker.getPosts() else { return }
             presenter?.presentInitialize(with: posts)
+            presenter?.present(isLoading: false)
         }
     }
 }

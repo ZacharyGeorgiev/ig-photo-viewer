@@ -29,12 +29,13 @@ public final class LaunchViewController: UIViewController {
     private let interactor: LaunchInteractor
     private var images: [IGPostCell.ViewModel] {
         didSet {
-            imagesTableView.reloadData()
+            postsTableView.reloadData()
         }
     }
     
+    private lazy var loadingIndicator: UIActivityIndicatorView = makeLoadingIndicator()
     private lazy var headerView: IGHeaderView = makeHeaderView()
-    private lazy var imagesTableView: UITableView = makeImagesTableView()
+    private lazy var postsTableView: UITableView = makePostsTableView()
     
     // MARK: Lifecycle
     required init(interactor: LaunchInteractor) {
@@ -58,6 +59,16 @@ public final class LaunchViewController: UIViewController {
 
 // MARK: Display logic
 extension LaunchViewController {
+    func display(isLoading: Bool) {
+        syncSafe {
+            if isLoading {
+                showLoadingIndicator()
+            } else {
+                showTableView()
+            }
+        }
+    }
+    
     func update(with viewModel: ViewModel) {
         syncSafe {
             self.images = viewModel
@@ -92,15 +103,19 @@ extension LaunchViewController: UITableViewDataSource {
 private extension LaunchViewController {
     func setup() {
         view.backgroundColor = .white
-        view.addSubview(headerView)
-        view.addSubview(imagesTableView)
+        view.addSubviews(
+            loadingIndicator,
+            headerView,
+            postsTableView
+        )
         
+        loadingIndicator.easy.layout(Center())
         headerView.easy.layout(
             Top(),
             Left(),
             Right()
         )
-        imagesTableView.easy.layout(
+        postsTableView.easy.layout(
             Top().to(headerView),
             Left(),
             Right(),
@@ -111,17 +126,23 @@ private extension LaunchViewController {
 
 // MARK: Factory
 private extension LaunchViewController {
+    func makeLoadingIndicator() -> UIActivityIndicatorView {
+        let loadingIndicator = UIActivityIndicatorView()
+        return loadingIndicator
+    }
+    
     func makeHeaderView() -> IGHeaderView {
         let headerView = IGHeaderView()
         return headerView
     }
     
-    func makeImagesTableView() -> UITableView {
+    func makePostsTableView() -> UITableView {
         let tableView = UITableView()
         tableView.register(IGPostCell.self, forCellReuseIdentifier: IGPostCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
+        tableView.isHidden = true
         return tableView
     }
 }
@@ -129,4 +150,36 @@ private extension LaunchViewController {
 // MARK: Model
 extension LaunchViewController {
     typealias ViewModel = [IGPostCell.ViewModel]
+}
+
+// MARK: Private helper methods
+private extension LaunchViewController {
+    func showTableView() {
+        showView(postsTableView)
+        hideView(loadingIndicator)
+        loadingIndicator.stopAnimating()
+    }
+    
+    func showLoadingIndicator() {
+        loadingIndicator.startAnimating()
+        showView(loadingIndicator)
+        hideView(postsTableView)
+    }
+    
+    func showView(_ view: UIView) {
+        view.alpha = 0
+        view.isHidden = false
+        
+        UIView.animate(withDuration: 0.3) {
+            view.alpha = 1
+        }
+    }
+    
+    func hideView(_ view: UIView) {
+        UIView.animate(withDuration: 0.3) {
+            view.alpha = 0
+        } completion: { _ in
+            view.isHidden = true
+        }
+    }
 }

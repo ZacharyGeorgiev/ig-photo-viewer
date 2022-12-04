@@ -21,6 +21,10 @@ final class LaunchPresenter {
 
 // MARK: Present
 extension LaunchPresenter {
+    func present(isLoading: Bool) {
+        displayLogic?.display(isLoading: isLoading)
+    }
+    
     func presentInitialize(with posts: [IGPost]) {
         let viewModel = setupViewModel(with: posts)
         displayLogic?.update(with: viewModel)
