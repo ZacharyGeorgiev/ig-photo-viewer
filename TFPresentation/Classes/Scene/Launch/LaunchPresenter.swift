@@ -36,6 +36,11 @@ extension LaunchPresenter {
         let viewModel = setupViewModel(with: posts)
         displayLogic?.update(with: viewModel)
     }
+    
+    func presentRefreshedPosts(_ posts: [IGPost]) {
+        presentInitialize(with: posts)
+        displayLogic?.display(isRefreshing: false)
+    }
 }
 
 // MARK: Private helper methods

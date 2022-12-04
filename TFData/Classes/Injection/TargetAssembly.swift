@@ -16,6 +16,8 @@ public final class TargetAssembly: Assembly {
     
     // MARK: Public methods
     public func assemble(with resolver: Resolver) {
+        resolver.register(WorkQueue.self, BackgroundWorkQueue.init).scope(.application)
+        
         resolver.register(PostsWorker.self, PostsService.init)
         resolver.register(AuthTokenWorker.self, AuthTokenService.init)
         resolver.register(MediaUrlWorker.self, MediaUrlService.init)

@@ -74,6 +74,8 @@
 		FF89F615293AAA1C002A4663 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F614293AAA1C002A4663 /* UIStackView+Extension.swift */; };
 		FF89F61D293D3D83002A4663 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F61C293D3D83002A4663 /* UIView+Extension.swift */; };
 		FF89F61F293D43E9002A4663 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F61E293D43E9002A4663 /* Date+Extension.swift */; };
+		FF89F622293D4910002A4663 /* WorkQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F621293D4910002A4663 /* WorkQueue.swift */; };
+		FF89F626293D495D002A4663 /* BackgroundWorkQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F625293D495D002A4663 /* BackgroundWorkQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +231,8 @@
 		FF89F614293AAA1C002A4663 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		FF89F61C293D3D83002A4663 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		FF89F61E293D43E9002A4663 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		FF89F621293D4910002A4663 /* WorkQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkQueue.swift; sourceTree = "<group>"; };
+		FF89F625293D495D002A4663 /* BackgroundWorkQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundWorkQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +311,7 @@
 		1D7899662366F6880037DEFE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FF89F620293D4907002A4663 /* Queues */,
 				D37C48EE23B5F474009A6C8E /* Workers */,
 			);
 			path = Classes;
@@ -333,6 +338,7 @@
 		1D7899692366F69D0037DEFE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FF89F624293D4954002A4663 /* Queues */,
 				FF4F47172934C22C00458A4C /* Mappers */,
 				FF4F47162934C22000458A4C /* NetworkProviders */,
 				FF4F47152934C20C00458A4C /* Services */,
@@ -736,6 +742,22 @@
 				FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FF89F620293D4907002A4663 /* Queues */ = {
+			isa = PBXGroup;
+			children = (
+				FF89F621293D4910002A4663 /* WorkQueue.swift */,
+			);
+			path = Queues;
+			sourceTree = "<group>";
+		};
+		FF89F624293D4954002A4663 /* Queues */ = {
+			isa = PBXGroup;
+			children = (
+				FF89F625293D495D002A4663 /* BackgroundWorkQueue.swift */,
+			);
+			path = Queues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1162,6 +1184,7 @@
 				FF4F470E2934B97100458A4C /* Instagram.swift in Sources */,
 				FF6B0FE929391297008C07B4 /* MediaUrlMapper.swift in Sources */,
 				FF4F47112934BE5D00458A4C /* IGPostEntity.swift in Sources */,
+				FF89F626293D495D002A4663 /* BackgroundWorkQueue.swift in Sources */,
 				FF6B0FEB2939165C008C07B4 /* MediaUrlsMapper.swift in Sources */,
 				FF4F471F2934D4E600458A4C /* AuthTokenService.swift in Sources */,
 				FF6B0FF129391BE2008C07B4 /* PostsMapper.swift in Sources */,
@@ -1177,6 +1200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF89F622293D4910002A4663 /* WorkQueue.swift in Sources */,
 				FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */,
 				FF4F471D2934D49000458A4C /* AuthTokenWorker.swift in Sources */,
 				FF6B0FE329390FF2008C07B4 /* MediaUrlWorker.swift in Sources */,

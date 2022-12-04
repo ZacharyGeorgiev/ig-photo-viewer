@@ -36,6 +36,7 @@ public final class LaunchViewController: UIViewController {
     private lazy var loadingIndicator: UIActivityIndicatorView = makeLoadingIndicator()
     private lazy var headerView: IGHeaderView = makeHeaderView()
     private lazy var postsTableView: UITableView = makePostsTableView()
+    private lazy var refreshControl: UIRefreshControl = makeRefreshControl()
     
     // MARK: Lifecycle
     required init(interactor: LaunchInteractor) {
@@ -72,6 +73,16 @@ extension LaunchViewController {
     func update(with viewModel: ViewModel) {
         syncSafe {
             self.images = viewModel
+        }
+    }
+    
+    func display(isRefreshing: Bool) {
+        syncSafe {
+            if isRefreshing {
+                refreshControl.beginRefreshing()
+            } else {
+                refreshControl.endRefreshing()
+            }
         }
     }
 }
@@ -143,13 +154,27 @@ private extension LaunchViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.isHidden = true
+        tableView.addSubview(refreshControl)
         return tableView
+    }
+    
+    func makeRefreshControl() -> UIRefreshControl {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+        return refreshControl
     }
 }
 
 // MARK: Model
 extension LaunchViewController {
     typealias ViewModel = [IGPostCell.ViewModel]
+}
+
+// MARK: Objc methods
+@objc private extension LaunchViewController {
+    func didRefresh() {
+        interactor.handle(request: .didRefresh)
+    }
 }
 
 // MARK: Private helper methods
