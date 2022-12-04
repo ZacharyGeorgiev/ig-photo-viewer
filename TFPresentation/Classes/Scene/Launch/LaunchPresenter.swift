@@ -13,6 +13,13 @@ final class LaunchPresenter {
     private weak var displayLogic: LaunchViewController?
     private var router: LaunchRouter?
     
+    private let dateFormatter: DateFormatter
+    
+    init() {
+        dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMMM YYYY"
+    }
+    
     func setup(with displayLogic: LaunchViewController?, router: LaunchRouter?) {
         self.displayLogic = displayLogic
         self.router = router
@@ -41,8 +48,18 @@ private extension LaunchPresenter {
                 mediaUrl: mediaUrl,
                 type: $0.type,
                 caption: $0.caption,
-                timestamp: "5 hours ago"
+                timestamp: getTimestampString(from: $0.timestamp)
             )
         }
+    }
+}
+
+private extension LaunchPresenter {
+    func getTimestampString(from date: Date) -> String {
+        let monthsPassedFromDate = Date().months(from: date)
+        guard monthsPassedFromDate < 12 else {
+            return dateFormatter.string(from: date)
+        }
+        return date.relativeTimeString()
     }
 }

@@ -31,11 +31,3 @@ extension LaunchInteractor {
         }
     }
 }
-
-private extension LaunchInteractor {
-    func fetchImages() async {
-//        print("fetching images")
-//        let images = try? await imagesWorker.getImages()
-//        print("images \(images)")
-    }
-}

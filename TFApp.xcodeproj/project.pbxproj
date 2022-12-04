@@ -73,6 +73,7 @@
 		FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */; };
 		FF89F615293AAA1C002A4663 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F614293AAA1C002A4663 /* UIStackView+Extension.swift */; };
 		FF89F61D293D3D83002A4663 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F61C293D3D83002A4663 /* UIView+Extension.swift */; };
+		FF89F61F293D43E9002A4663 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F61E293D43E9002A4663 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +228,7 @@
 		FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGMediaType.swift; sourceTree = "<group>"; };
 		FF89F614293AAA1C002A4663 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		FF89F61C293D3D83002A4663 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		FF89F61E293D43E9002A4663 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -713,6 +715,7 @@
 				FF6B0FD9293662B7008C07B4 /* UIEdgeInsets+Extension.swift */,
 				FF89F614293AAA1C002A4663 /* UIStackView+Extension.swift */,
 				FF89F61C293D3D83002A4663 /* UIView+Extension.swift */,
+				FF89F61E293D43E9002A4663 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1197,6 +1200,7 @@
 				86E87E7A255006D800ACC1EF /* Coordinator.swift in Sources */,
 				D37C490123B5FCA9009A6C8E /* LaunchViewController.swift in Sources */,
 				FF4F472B2934E0AA00458A4C /* UIColor+Extension.swift in Sources */,
+				FF89F61F293D43E9002A4663 /* Date+Extension.swift in Sources */,
 				FF4F472F2934E8A900458A4C /* UIFont+Extension.swift in Sources */,
 				FF4F472D2934E77F00458A4C /* IGPostCell.swift in Sources */,
 			);
