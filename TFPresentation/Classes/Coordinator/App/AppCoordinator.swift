@@ -17,13 +17,13 @@ public final class AppCoordinator: Coordinator {
     }
 
     public func start() {
-        let launchVC = LaunchViewController(with: self)
+        let launchVC = FeedViewController(with: self)
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.setViewControllers([launchVC], animated: false)
     }
 }
 
 // MARK: LaunchRoutable
-extension AppCoordinator: LaunchRouter {
+extension AppCoordinator: FeedRouter {
     
 }

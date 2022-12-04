@@ -1,5 +1,5 @@
 //
-//  LaunchInteractor.swift
+//  FeedInteractor.swift
 //  TFApp
 //
 //  Created by Zahari Georgiev on 24/11/2022.
@@ -8,23 +8,23 @@
 import TFDomain
 import Resolver
 
-enum LaunchInteractorRequest {
+enum FeedInteractorRequest {
     case didRefresh
 }
 
-final class LaunchInteractor {
+final class FeedInteractor {
     // MARK: Private properties
     @Injected private var workQueue: WorkQueue
     @Injected private var postsWorker: PostsWorker
 
-    private var presenter: LaunchPresenter?
+    private var presenter: FeedPresenter?
     
     // MARK: Internal methods
-    func setup(with presenter: LaunchPresenter) {
+    func setup(with presenter: FeedPresenter) {
         self.presenter = presenter
     }
     
-    func handle(request: LaunchInteractorRequest) {
+    func handle(request: FeedInteractorRequest) {
         workQueue.async {
             switch request {
             case .didRefresh:
@@ -35,7 +35,7 @@ final class LaunchInteractor {
 }
 
 // MARK: - Requests
-extension LaunchInteractor {
+extension FeedInteractor {
     func handleInitialize() {
         presenter?.present(isLoading: true)
         Task {
@@ -57,7 +57,7 @@ extension LaunchInteractor {
     }
 }
 
-private extension LaunchInteractor {
+private extension FeedInteractor {
     func getPosts() async throws -> [IGPost] {
         return try await postsWorker.getPosts()
     }

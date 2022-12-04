@@ -1,5 +1,5 @@
 //
-//  LaunchViewController.swift
+//  FeedViewController.swift
 //  TFApp
 //
 //  Created by Zahari Georgiev on 24/11/2022.
@@ -10,10 +10,10 @@ import EasyPeasy
 import TFExtensions
 
 // MARK: Factory
-extension LaunchViewController {
-    convenience init(with router: LaunchRouter) {
-        let interactor = LaunchInteractor()
-        let presenter = LaunchPresenter()
+extension FeedViewController {
+    convenience init(with router: FeedRouter) {
+        let interactor = FeedInteractor()
+        let presenter = FeedPresenter()
         self.init(interactor: interactor)
         
         interactor.setup(with: presenter)
@@ -22,12 +22,12 @@ extension LaunchViewController {
 }
 
 // MARK: ViewController
-public final class LaunchViewController: UIViewController {
+public final class FeedViewController: UIViewController {
     // MARK: Internal properties
     
     // MARK: Private properties
-    private let interactor: LaunchInteractor
-    private var images: [IGPostCell.ViewModel] {
+    private let interactor: FeedInteractor
+    private var posts: [IGPostCell.ViewModel] {
         didSet {
             postsTableView.reloadData()
         }
@@ -41,9 +41,9 @@ public final class LaunchViewController: UIViewController {
     private lazy var refreshControl: UIRefreshControl = makeRefreshControl()
     
     // MARK: Lifecycle
-    required init(interactor: LaunchInteractor) {
+    required init(interactor: FeedInteractor) {
         self.interactor = interactor
-        self.images = []
+        self.posts = []
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -61,7 +61,7 @@ public final class LaunchViewController: UIViewController {
 }
 
 // MARK: Display logic
-extension LaunchViewController {
+extension FeedViewController {
     func display(isLoading: Bool) {
         syncSafe {
             if isLoading {
@@ -74,7 +74,7 @@ extension LaunchViewController {
     
     func update(with viewModel: ViewModel) {
         syncSafe {
-            self.images = viewModel
+            self.posts = viewModel
         }
     }
     
@@ -97,23 +97,23 @@ extension LaunchViewController {
     }
 }
 
-extension LaunchViewController: UITableViewDelegate {
+extension FeedViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }
 
-extension LaunchViewController: UITableViewDataSource {
+extension FeedViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return images.count
+        return posts.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: IGPostCell.identifier, for: indexPath) as? IGPostCell else {
             return UITableViewCell()
         }
-        let image = images[indexPath.row]
-        cell.update(with: image)
+        let post = posts[indexPath.row]
+        cell.update(with: post)
         cell.selectionStyle = .none
         
         return cell
@@ -121,7 +121,7 @@ extension LaunchViewController: UITableViewDataSource {
 }
 
 // MARK: Private setup methods
-private extension LaunchViewController {
+private extension FeedViewController {
     func setup() {
         view.backgroundColor = .white
         view.addSubviews(
@@ -151,7 +151,7 @@ private extension LaunchViewController {
 }
 
 // MARK: Factory
-private extension LaunchViewController {
+private extension FeedViewController {
     func makeContentView() -> UIView {
         let view = UIView()
         view.addSubviews(
@@ -186,6 +186,7 @@ private extension LaunchViewController {
         tableView.separatorStyle = .none
         tableView.isHidden = true
         tableView.addSubview(refreshControl)
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }
     
@@ -197,19 +198,19 @@ private extension LaunchViewController {
 }
 
 // MARK: Model
-extension LaunchViewController {
+extension FeedViewController {
     typealias ViewModel = [IGPostCell.ViewModel]
 }
 
 // MARK: Objc methods
-@objc private extension LaunchViewController {
+@objc private extension FeedViewController {
     func didRefresh() {
         interactor.handle(request: .didRefresh)
     }
 }
 
 // MARK: Private helper methods
-private extension LaunchViewController {
+private extension FeedViewController {
     func showTableView() {
         showView(postsTableView)
         hideView(loadingIndicator)

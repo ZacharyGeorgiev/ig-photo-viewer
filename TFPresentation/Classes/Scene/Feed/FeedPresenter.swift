@@ -1,5 +1,5 @@
 //
-//  LaunchPresenter.swift
+//  FeedPresenter.swift
 //  TFApp
 //
 //  Created by Zahari Georgiev on 24/11/2022.
@@ -8,10 +8,10 @@
 import Foundation
 import TFDomain
 
-final class LaunchPresenter {
+final class FeedPresenter {
     // MARK: Private properties
-    private weak var displayLogic: LaunchViewController?
-    private var router: LaunchRouter?
+    private weak var displayLogic: FeedViewController?
+    private var router: FeedRouter?
     
     private let dateFormatter: DateFormatter
     
@@ -20,14 +20,14 @@ final class LaunchPresenter {
         dateFormatter.dateFormat = "d MMMM YYYY"
     }
     
-    func setup(with displayLogic: LaunchViewController?, router: LaunchRouter?) {
+    func setup(with displayLogic: FeedViewController?, router: FeedRouter?) {
         self.displayLogic = displayLogic
         self.router = router
     }
 }
 
 // MARK: Present
-extension LaunchPresenter {
+extension FeedPresenter {
     func present(isLoading: Bool) {
         displayLogic?.display(isLoading: isLoading)
     }
@@ -48,7 +48,7 @@ extension LaunchPresenter {
 }
 
 // MARK: Private helper methods
-private extension LaunchPresenter {
+private extension FeedPresenter {
     func setupViewModel(with posts: [IGPost]) -> [IGPostCell.ViewModel] {
         return posts.compactMap {
             guard let mediaUrl = $0.mediaUrl else { return nil }
@@ -63,7 +63,7 @@ private extension LaunchPresenter {
     }
 }
 
-private extension LaunchPresenter {
+private extension FeedPresenter {
     func getTimestampString(from date: Date) -> String {
         let monthsPassedFromDate = Date().months(from: date)
         guard monthsPassedFromDate < 12 else {

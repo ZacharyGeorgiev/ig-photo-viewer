@@ -38,10 +38,10 @@
 		86E87E7A255006D800ACC1EF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E87E79255006D800ACC1EF /* Coordinator.swift */; };
 		86E87E882550070000ACC1EF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E87E862550070000ACC1EF /* AppCoordinator.swift */; };
 		C2F85C362747B540007FF072 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F85C352747B540007FF072 /* Assembly.swift */; };
-		D37C48FE23B5FCA9009A6C8E /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48F623B5FCA9009A6C8E /* LaunchPresenter.swift */; };
-		D37C490023B5FCA9009A6C8E /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48F823B5FCA9009A6C8E /* LaunchRouter.swift */; };
-		D37C490123B5FCA9009A6C8E /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48F923B5FCA9009A6C8E /* LaunchViewController.swift */; };
-		D37C490423B5FCA9009A6C8E /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48FC23B5FCA9009A6C8E /* LaunchInteractor.swift */; };
+		D37C48FE23B5FCA9009A6C8E /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48F623B5FCA9009A6C8E /* FeedPresenter.swift */; };
+		D37C490023B5FCA9009A6C8E /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48F823B5FCA9009A6C8E /* FeedRouter.swift */; };
+		D37C490123B5FCA9009A6C8E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48F923B5FCA9009A6C8E /* FeedViewController.swift */; };
+		D37C490423B5FCA9009A6C8E /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C48FC23B5FCA9009A6C8E /* FeedInteractor.swift */; };
 		E7C9AC63D82F7A73FDC3AEDA /* Pods_TFData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1736E7D3F3E6A9BF3B6145 /* Pods_TFData.framework */; };
 		FF4F47062934B41700458A4C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FF4F47052934B41700458A4C /* .swiftlint.yml */; };
 		FF4F470B2934B57200458A4C /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F470A2934B57200458A4C /* PostsService.swift */; };
@@ -192,10 +192,10 @@
 		CD653040ABE755FBA9D478A4 /* Pods-TFPresentation.debug dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFPresentation.debug dev.xcconfig"; path = "Target Support Files/Pods-TFPresentation/Pods-TFPresentation.debug dev.xcconfig"; sourceTree = "<group>"; };
 		D02A6BC6F74F0886C6B05984 /* Pods_TFPresentationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFPresentationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3067270E9BF42D161B1EC91 /* Pods-TFApp.release qa prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFApp.release qa prod.xcconfig"; path = "Target Support Files/Pods-TFApp/Pods-TFApp.release qa prod.xcconfig"; sourceTree = "<group>"; };
-		D37C48F623B5FCA9009A6C8E /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
-		D37C48F823B5FCA9009A6C8E /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
-		D37C48F923B5FCA9009A6C8E /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
-		D37C48FC23B5FCA9009A6C8E /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
+		D37C48F623B5FCA9009A6C8E /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
+		D37C48F823B5FCA9009A6C8E /* FeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRouter.swift; sourceTree = "<group>"; };
+		D37C48F923B5FCA9009A6C8E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		D37C48FC23B5FCA9009A6C8E /* FeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInteractor.swift; sourceTree = "<group>"; };
 		D77B3C0B4223A9B64C886A7D /* Pods_TFDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7EF3300B2A41E067B03EE92 /* Pods-TFData.release qa prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFData.release qa prod.xcconfig"; path = "Target Support Files/Pods-TFData/Pods-TFData.release qa prod.xcconfig"; sourceTree = "<group>"; };
 		DE132FA5142782584B3CFDD5 /* Pods_TFAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -393,21 +393,21 @@
 		1D7899AA2366FE750037DEFE /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				1D7899AB2366FE7F0037DEFE /* Launch */,
+				1D7899AB2366FE7F0037DEFE /* Feed */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
 		};
-		1D7899AB2366FE7F0037DEFE /* Launch */ = {
+		1D7899AB2366FE7F0037DEFE /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				D37C48F523B5F5C1009A6C8E /* Views */,
-				D37C48FC23B5FCA9009A6C8E /* LaunchInteractor.swift */,
-				D37C48F623B5FCA9009A6C8E /* LaunchPresenter.swift */,
-				D37C48F823B5FCA9009A6C8E /* LaunchRouter.swift */,
-				D37C48F923B5FCA9009A6C8E /* LaunchViewController.swift */,
+				D37C48FC23B5FCA9009A6C8E /* FeedInteractor.swift */,
+				D37C48F623B5FCA9009A6C8E /* FeedPresenter.swift */,
+				D37C48F823B5FCA9009A6C8E /* FeedRouter.swift */,
+				D37C48F923B5FCA9009A6C8E /* FeedViewController.swift */,
 			);
-			path = Launch;
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		1DC7E9282366E6BD006DBA10 = {
@@ -1224,13 +1224,13 @@
 				FF89F61D293D3D83002A4663 /* UIView+Extension.swift in Sources */,
 				FF89F628293D4D4C002A4663 /* ErrorView.swift in Sources */,
 				86E87E882550070000ACC1EF /* AppCoordinator.swift in Sources */,
-				D37C490023B5FCA9009A6C8E /* LaunchRouter.swift in Sources */,
-				D37C490423B5FCA9009A6C8E /* LaunchInteractor.swift in Sources */,
+				D37C490023B5FCA9009A6C8E /* FeedRouter.swift in Sources */,
+				D37C490423B5FCA9009A6C8E /* FeedInteractor.swift in Sources */,
 				FF4F47252934DB2300458A4C /* IGHeaderView.swift in Sources */,
 				FF89F615293AAA1C002A4663 /* UIStackView+Extension.swift in Sources */,
-				D37C48FE23B5FCA9009A6C8E /* LaunchPresenter.swift in Sources */,
+				D37C48FE23B5FCA9009A6C8E /* FeedPresenter.swift in Sources */,
 				86E87E7A255006D800ACC1EF /* Coordinator.swift in Sources */,
-				D37C490123B5FCA9009A6C8E /* LaunchViewController.swift in Sources */,
+				D37C490123B5FCA9009A6C8E /* FeedViewController.swift in Sources */,
 				FF4F472B2934E0AA00458A4C /* UIColor+Extension.swift in Sources */,
 				FF89F61F293D43E9002A4663 /* Date+Extension.swift in Sources */,
 				FF4F472F2934E8A900458A4C /* UIFont+Extension.swift in Sources */,
