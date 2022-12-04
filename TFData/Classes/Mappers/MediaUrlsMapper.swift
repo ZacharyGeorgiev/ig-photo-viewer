@@ -14,11 +14,12 @@ struct MediaUrlsMapper {
     @Injected private var mediaUrlWorker: MediaUrlWorker
     
     func map(from ids: [String]) async -> [URL]? {
-        var urls: [URL] = []
-        await ids.asyncForEach { id in
+        var urls: [(index: Int, url: URL)] = []
+        await ids.enumerated().asyncForEach { index, id in
             guard let url = await mediaUrlWorker.getMediaUrl(for: id) else { return }
-            urls.append(url)
+            urls.append((index: index, url: url))
         }
-        return urls
+        let sortedUrls = urls.sorted(by: { $0.index < $1.index })
+        return sortedUrls.map({ $0.url })
     }
 }
