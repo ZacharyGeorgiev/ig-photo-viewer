@@ -27,7 +27,7 @@ struct PostsService: PostsWorker {
 
 private extension PostsService {
     func getPostEntities() async throws -> [IGPostEntity] {
-        let authToken = await authTokenWorker.getToken()
+        let authToken = try await authTokenWorker.getToken()
         return try await withCheckedThrowingContinuation { continuation in
             instagramProvider.request(.getPosts(accessToken: authToken)) { result in
                 switch result {

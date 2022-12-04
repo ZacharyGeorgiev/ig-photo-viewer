@@ -17,7 +17,7 @@ struct MediaUrlService: MediaUrlWorker {
     @Injected private var mediaUrlMapper: MediaUrlMapper
     
     func getMediaUrl(for id: String) async -> URL? {
-        let authToken = await authTokenWorker.getToken()
+        let authToken = (try? await authTokenWorker.getToken()) ?? ""
         return await withCheckedContinuation { continuation in
             instagramProvider.request(.getPost(id: id, accessToken: authToken)) { result in
                 switch result {

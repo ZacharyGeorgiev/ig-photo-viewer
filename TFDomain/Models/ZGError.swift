@@ -13,6 +13,7 @@ public struct ZGError: Error {
         case generalFailure
         case decoding
         case sessionExpired
+        case accessTokenMissing
     }
     
     public let type: ErrorType

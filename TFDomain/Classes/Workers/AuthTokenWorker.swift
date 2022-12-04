@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol AuthTokenWorker {
-    func getToken() async -> String
+    func getToken() async throws -> String
 }

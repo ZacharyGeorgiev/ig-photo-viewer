@@ -82,6 +82,8 @@ private extension LaunchPresenter {
             return "Failed to decode response"
         case .sessionExpired:
             return "Access token expired"
+        case .accessTokenMissing:
+            return "Please provide an IG access token"
         default:
             return generalErrorMessage
         }
