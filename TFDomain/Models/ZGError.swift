@@ -12,6 +12,7 @@ public struct ZGError: Error {
     public enum ErrorType {
         case generalFailure
         case decoding
+        case sessionExpired
     }
     
     public let type: ErrorType

@@ -77,6 +77,7 @@
 		FF89F626293D495D002A4663 /* BackgroundWorkQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F625293D495D002A4663 /* BackgroundWorkQueue.swift */; };
 		FF89F628293D4D4C002A4663 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F627293D4D4C002A4663 /* ErrorView.swift */; };
 		FF89F62A293D5576002A4663 /* ZGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F629293D5576002A4663 /* ZGError.swift */; };
+		FF89F62C293D57A2002A4663 /* IGErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F62B293D57A2002A4663 /* IGErrorEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,6 +236,7 @@
 		FF89F625293D495D002A4663 /* BackgroundWorkQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundWorkQueue.swift; sourceTree = "<group>"; };
 		FF89F627293D4D4C002A4663 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		FF89F629293D5576002A4663 /* ZGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZGError.swift; sourceTree = "<group>"; };
+		FF89F62B293D57A2002A4663 /* IGErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGErrorEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -665,6 +667,7 @@
 				FF4F47102934BE5D00458A4C /* IGPostEntity.swift */,
 				FF4F47222934D65A00458A4C /* AuthTokenEntity.swift */,
 				FF6B0FE629391244008C07B4 /* MediaUrlEntity.swift */,
+				FF89F62B293D57A2002A4663 /* IGErrorEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1190,6 +1193,7 @@
 				FF89F626293D495D002A4663 /* BackgroundWorkQueue.swift in Sources */,
 				FF6B0FEB2939165C008C07B4 /* MediaUrlsMapper.swift in Sources */,
 				FF4F471F2934D4E600458A4C /* AuthTokenService.swift in Sources */,
+				FF89F62C293D57A2002A4663 /* IGErrorEntity.swift in Sources */,
 				FF6B0FF129391BE2008C07B4 /* PostsMapper.swift in Sources */,
 				FF6B0FE729391244008C07B4 /* MediaUrlEntity.swift in Sources */,
 				FF4F47232934D65A00458A4C /* AuthTokenEntity.swift in Sources */,

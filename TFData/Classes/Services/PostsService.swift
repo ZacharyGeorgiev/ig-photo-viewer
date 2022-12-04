@@ -32,14 +32,16 @@ private extension PostsService {
             instagramProvider.request(.getPosts(accessToken: authToken)) { result in
                 switch result {
                 case .success(let response):
+                    guard response.statusCode == 200 else {
+                        return continuation.resume(throwing: getErrorFromResponse(response))
+                    }
                     guard let postEntities = try? response.map(
                         [IGPostEntity].self,
                         atKeyPath: "data",
                         using: jsonDecoder,
                         failsOnEmptyData: true
                     ) else {
-                        continuation.resume(throwing: ZGError(.decoding))
-                        return
+                        return continuation.resume(throwing: ZGError(.decoding))
                     }
                     continuation.resume(returning: postEntities)
                 case .failure(let error):
@@ -47,5 +49,16 @@ private extension PostsService {
                 }
             }
         }
+    }
+    
+    func getErrorFromResponse(_ response: Response) -> ZGError {
+        guard let errorEntity = try? response.map(
+            IGErrorEntity.self,
+            atKeyPath: "error",
+            using: jsonDecoder,
+            failsOnEmptyData: true
+        ) else { return .init(.generalFailure) }
+        if errorEntity.code == 190 { return .init(.sessionExpired) }
+        return .init(.generalFailure)
     }
 }

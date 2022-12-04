@@ -80,6 +80,8 @@ private extension LaunchPresenter {
         switch error.type {
         case .decoding:
             return "Failed to decode response"
+        case .sessionExpired:
+            return "Access token expired"
         default:
             return generalErrorMessage
         }
