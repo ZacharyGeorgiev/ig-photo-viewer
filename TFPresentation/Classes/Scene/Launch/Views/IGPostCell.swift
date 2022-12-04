@@ -1,5 +1,5 @@
 //
-//  IGImageCell.swift
+//  IGPostCell.swift
 //  TFPresentation
 //
 //  Created by Zahari Georgiev on 28/11/2022.
@@ -12,16 +12,18 @@ import EasyPeasy
 import Nuke
 import TFDomain
 
-class IGImageCell: UITableViewCell {
+class IGPostCell: UITableViewCell {
     // MARK: Public properties
-    public static let identifier = "imageCell"
+    public static let identifier = "postCell"
     
     // MARK: Private properties
     private lazy var stackView: UIStackView = makeStackView()
+    private lazy var mediaStackView: UIStackView = makeMediaStackView()
     private lazy var usernameLabel: UILabel = makeUsernameLabel()
-    private lazy var postImageView: UIImageView = makePostImageView()
+    private lazy var mediaScrollView: UIScrollView = makeMediaScrollView()
     private lazy var captionLabel: UILabel = makeCaptionLabel()
     private lazy var timestampLabel: UILabel = makeTimestampLabel()
+    private lazy var pageControl: UIPageControl = makePageControl()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,10 +36,22 @@ class IGImageCell: UITableViewCell {
     }
 }
 
-extension IGImageCell {
+extension IGPostCell {
     func update(with viewModel: ViewModel) {
-        let imageRequest = ImageRequest(url: viewModel.mediaUrl)
-        Nuke.loadImage(with: imageRequest, into: postImageView)
+        mediaStackView.removeAllArrangedSubviews()
+        let mediaUrls = viewModel.type.mediaUrls
+        mediaUrls.forEach { mediaUrl in
+            let imageView = makeImageView()
+            mediaStackView.addArrangedSubview(imageView)
+            imageView.easy.layout(
+                Width(UIScreen.main.bounds.width),
+                Height(0.45 * UIScreen.main.bounds.height)
+            )
+            let imageRequest = ImageRequest(url: mediaUrl)
+            Nuke.loadImage(with: imageRequest, into: imageView)
+        }
+        pageControl.numberOfPages = mediaUrls.count
+        pageControl.isHidden = mediaUrls.count < 2
         
         usernameLabel.text = viewModel.username
         captionLabel.text = viewModel.caption
@@ -46,11 +60,13 @@ extension IGImageCell {
 }
 
 // MARK: Private setup methods
-private extension IGImageCell {
+private extension IGPostCell {
     func setup() {
-        addSubview(stackView)
+        contentView.addSubview(stackView)
         
-        postImageView.easy.layout(Height(0.45 * UIScreen.main.bounds.height))
+        mediaScrollView.easy.layout(Height(0.45 * UIScreen.main.bounds.height))
+        
+        mediaStackView.easy.layout(Edges())
         
         [usernameLabel,
          captionLabel,
@@ -66,16 +82,23 @@ private extension IGImageCell {
 }
 
 // MARK: Factory
-private extension IGImageCell {
+private extension IGPostCell {
     func makeStackView() -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: [
             makeContainerView(for: usernameLabel),
-            postImageView,
+            mediaScrollView,
+            pageControl,
             makeContainerView(for: captionLabel),
             makeContainerView(for: timestampLabel)
         ])
         stackView.spacing = 7
         stackView.axis = .vertical
+        return stackView
+    }
+    
+    func makeMediaStackView() -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
         return stackView
     }
     
@@ -87,7 +110,18 @@ private extension IGImageCell {
         return label
     }
     
-    func makePostImageView() -> UIImageView {
+    func makeMediaScrollView() -> UIScrollView {
+        let scrollView = UIScrollView()
+        scrollView.addSubview(mediaStackView)
+        scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.delegate = self
+        scrollView.isScrollEnabled = true
+        scrollView.isUserInteractionEnabled = true
+        return scrollView
+    }
+    
+    func makeImageView() -> UIImageView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -111,6 +145,15 @@ private extension IGImageCell {
         return label
     }
     
+    func makePageControl() -> UIPageControl {
+        let pageControl = UIPageControl()
+        pageControl.currentPage = 0
+        pageControl.isHidden = true
+        pageControl.pageIndicatorTintColor = .lightGray
+        pageControl.currentPageIndicatorTintColor = UIColor(hex: "0074B7")
+        return pageControl
+    }
+    
     func makeContainerView(for view: UIView) -> UIView {
         let containerView = UIView()
         containerView.addSubview(view)
@@ -118,8 +161,15 @@ private extension IGImageCell {
     }
 }
 
+extension IGPostCell: UIScrollViewDelegate {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControl.currentPage = Int(pageNumber)
+    }
+}
+
 // MARK: Private helper methods
-private extension IGImageCell {
+private extension IGPostCell {
     func setLabelConstraints(for label: UILabel) {
         label.easy.layout(
             Top(),
@@ -130,7 +180,7 @@ private extension IGImageCell {
     }
 }
 
-extension IGImageCell {
+extension IGPostCell {
     struct ViewModel {
         let username: String
         let mediaUrl: URL

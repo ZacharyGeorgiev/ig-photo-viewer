@@ -27,7 +27,7 @@ public final class LaunchViewController: UIViewController {
     
     // MARK: Private properties
     private let interactor: LaunchInteractor
-    private var images: [IGImageCell.ViewModel] {
+    private var images: [IGPostCell.ViewModel] {
         didSet {
             imagesTableView.reloadData()
         }
@@ -77,7 +77,7 @@ extension LaunchViewController: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: IGImageCell.identifier, for: indexPath) as? IGImageCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: IGPostCell.identifier, for: indexPath) as? IGPostCell else {
             return UITableViewCell()
         }
         let image = images[indexPath.row]
@@ -118,7 +118,7 @@ private extension LaunchViewController {
     
     func makeImagesTableView() -> UITableView {
         let tableView = UITableView()
-        tableView.register(IGImageCell.self, forCellReuseIdentifier: IGImageCell.identifier)
+        tableView.register(IGPostCell.self, forCellReuseIdentifier: IGPostCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -128,5 +128,5 @@ private extension LaunchViewController {
 
 // MARK: Model
 extension LaunchViewController {
-    typealias ViewModel = [IGImageCell.ViewModel]
+    typealias ViewModel = [IGPostCell.ViewModel]
 }

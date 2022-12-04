@@ -56,7 +56,7 @@
 		FF4F47232934D65A00458A4C /* AuthTokenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47222934D65A00458A4C /* AuthTokenEntity.swift */; };
 		FF4F47252934DB2300458A4C /* IGHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47242934DB2300458A4C /* IGHeaderView.swift */; };
 		FF4F472B2934E0AA00458A4C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F472A2934E0AA00458A4C /* UIColor+Extension.swift */; };
-		FF4F472D2934E77F00458A4C /* IGImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F472C2934E77F00458A4C /* IGImageCell.swift */; };
+		FF4F472D2934E77F00458A4C /* IGPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F472C2934E77F00458A4C /* IGPostCell.swift */; };
 		FF4F472F2934E8A900458A4C /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F472E2934E8A900458A4C /* UIFont+Extension.swift */; };
 		FF6B0FDA293662B7008C07B4 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FD9293662B7008C07B4 /* UIEdgeInsets+Extension.swift */; };
 		FF6B0FDF29366914008C07B4 /* GlobalDispatchQueueHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B0FDE29366913008C07B4 /* GlobalDispatchQueueHelpers.swift */; };
@@ -71,6 +71,7 @@
 		FF82DA662934AB9300D00EAF /* PostsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA652934AB9300D00EAF /* PostsWorker.swift */; };
 		FF82DA692934ABE700D00EAF /* IGPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA682934ABE700D00EAF /* IGPost.swift */; };
 		FF82DA6B2934AD0500D00EAF /* IGMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */; };
+		FF89F615293AAA1C002A4663 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F614293AAA1C002A4663 /* UIStackView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,7 +209,7 @@
 		FF4F47222934D65A00458A4C /* AuthTokenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenEntity.swift; sourceTree = "<group>"; };
 		FF4F47242934DB2300458A4C /* IGHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGHeaderView.swift; sourceTree = "<group>"; };
 		FF4F472A2934E0AA00458A4C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		FF4F472C2934E77F00458A4C /* IGImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGImageCell.swift; sourceTree = "<group>"; };
+		FF4F472C2934E77F00458A4C /* IGPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGPostCell.swift; sourceTree = "<group>"; };
 		FF4F472E2934E8A900458A4C /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		FF6B0FD9293662B7008C07B4 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		FF6B0FDE29366913008C07B4 /* GlobalDispatchQueueHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDispatchQueueHelpers.swift; sourceTree = "<group>"; };
@@ -223,6 +224,7 @@
 		FF82DA652934AB9300D00EAF /* PostsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsWorker.swift; sourceTree = "<group>"; };
 		FF82DA682934ABE700D00EAF /* IGPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGPost.swift; sourceTree = "<group>"; };
 		FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGMediaType.swift; sourceTree = "<group>"; };
+		FF89F614293AAA1C002A4663 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -609,7 +611,7 @@
 			isa = PBXGroup;
 			children = (
 				FF4F47242934DB2300458A4C /* IGHeaderView.swift */,
-				FF4F472C2934E77F00458A4C /* IGImageCell.swift */,
+				FF4F472C2934E77F00458A4C /* IGPostCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -707,6 +709,7 @@
 				FF4F472A2934E0AA00458A4C /* UIColor+Extension.swift */,
 				FF4F472E2934E8A900458A4C /* UIFont+Extension.swift */,
 				FF6B0FD9293662B7008C07B4 /* UIEdgeInsets+Extension.swift */,
+				FF89F614293AAA1C002A4663 /* UIStackView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1185,12 +1188,13 @@
 				D37C490023B5FCA9009A6C8E /* LaunchRouter.swift in Sources */,
 				D37C490423B5FCA9009A6C8E /* LaunchInteractor.swift in Sources */,
 				FF4F47252934DB2300458A4C /* IGHeaderView.swift in Sources */,
+				FF89F615293AAA1C002A4663 /* UIStackView+Extension.swift in Sources */,
 				D37C48FE23B5FCA9009A6C8E /* LaunchPresenter.swift in Sources */,
 				86E87E7A255006D800ACC1EF /* Coordinator.swift in Sources */,
 				D37C490123B5FCA9009A6C8E /* LaunchViewController.swift in Sources */,
 				FF4F472B2934E0AA00458A4C /* UIColor+Extension.swift in Sources */,
 				FF4F472F2934E8A900458A4C /* UIFont+Extension.swift in Sources */,
-				FF4F472D2934E77F00458A4C /* IGImageCell.swift in Sources */,
+				FF4F472D2934E77F00458A4C /* IGPostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

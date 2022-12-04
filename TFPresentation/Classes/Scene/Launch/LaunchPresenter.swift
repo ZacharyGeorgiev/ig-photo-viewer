@@ -29,7 +29,7 @@ extension LaunchPresenter {
 
 // MARK: Private helper methods
 private extension LaunchPresenter {
-    func setupViewModel(with posts: [IGPost]) -> [IGImageCell.ViewModel] {
+    func setupViewModel(with posts: [IGPost]) -> [IGPostCell.ViewModel] {
         return posts.compactMap {
             guard let mediaUrl = $0.mediaUrl else { return nil }
             return .init(
