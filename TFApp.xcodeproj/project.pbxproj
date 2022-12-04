@@ -47,7 +47,6 @@
 		FF4F470B2934B57200458A4C /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F470A2934B57200458A4C /* PostsService.swift */; };
 		FF4F470E2934B97100458A4C /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F470D2934B97100458A4C /* Instagram.swift */; };
 		FF4F47112934BE5D00458A4C /* IGPostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47102934BE5D00458A4C /* IGPostEntity.swift */; };
-		FF4F47142934BF3600458A4C /* ZGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47132934BF3600458A4C /* ZGError.swift */; };
 		FF4F47192934C23500458A4C /* PostMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F47182934C23500458A4C /* PostMapper.swift */; };
 		FF4F471B2934C6E500458A4C /* Resolver+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471A2934C6E500458A4C /* Resolver+Extension.swift */; };
 		FF4F471D2934D49000458A4C /* AuthTokenWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F471C2934D49000458A4C /* AuthTokenWorker.swift */; };
@@ -76,6 +75,8 @@
 		FF89F61F293D43E9002A4663 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F61E293D43E9002A4663 /* Date+Extension.swift */; };
 		FF89F622293D4910002A4663 /* WorkQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F621293D4910002A4663 /* WorkQueue.swift */; };
 		FF89F626293D495D002A4663 /* BackgroundWorkQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F625293D495D002A4663 /* BackgroundWorkQueue.swift */; };
+		FF89F628293D4D4C002A4663 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F627293D4D4C002A4663 /* ErrorView.swift */; };
+		FF89F62A293D5576002A4663 /* ZGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89F629293D5576002A4663 /* ZGError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,7 +205,6 @@
 		FF4F470A2934B57200458A4C /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		FF4F470D2934B97100458A4C /* Instagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		FF4F47102934BE5D00458A4C /* IGPostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGPostEntity.swift; sourceTree = "<group>"; };
-		FF4F47132934BF3600458A4C /* ZGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZGError.swift; sourceTree = "<group>"; };
 		FF4F47182934C23500458A4C /* PostMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMapper.swift; sourceTree = "<group>"; };
 		FF4F471A2934C6E500458A4C /* Resolver+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Extension.swift"; sourceTree = "<group>"; };
 		FF4F471C2934D49000458A4C /* AuthTokenWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenWorker.swift; sourceTree = "<group>"; };
@@ -233,6 +233,8 @@
 		FF89F61E293D43E9002A4663 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		FF89F621293D4910002A4663 /* WorkQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkQueue.swift; sourceTree = "<group>"; };
 		FF89F625293D495D002A4663 /* BackgroundWorkQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundWorkQueue.swift; sourceTree = "<group>"; };
+		FF89F627293D4D4C002A4663 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		FF89F629293D5576002A4663 /* ZGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZGError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -670,7 +672,6 @@
 		FF4F47122934BF2700458A4C /* General */ = {
 			isa = PBXGroup;
 			children = (
-				FF4F47132934BF3600458A4C /* ZGError.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -709,6 +710,7 @@
 		FF4F47262934DC6300458A4C /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				FF89F627293D4D4C002A4663 /* ErrorView.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -740,6 +742,7 @@
 			children = (
 				FF82DA682934ABE700D00EAF /* IGPost.swift */,
 				FF82DA6A2934AD0500D00EAF /* IGMediaType.swift */,
+				FF89F629293D5576002A4663 /* ZGError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1192,7 +1195,6 @@
 				FF4F47232934D65A00458A4C /* AuthTokenEntity.swift in Sources */,
 				FF4F47212934D50600458A4C /* NPoint.swift in Sources */,
 				FF4F470B2934B57200458A4C /* PostsService.swift in Sources */,
-				FF4F47142934BF3600458A4C /* ZGError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,6 +1208,7 @@
 				FF6B0FE329390FF2008C07B4 /* MediaUrlWorker.swift in Sources */,
 				FF82DA662934AB9300D00EAF /* PostsWorker.swift in Sources */,
 				FF82DA692934ABE700D00EAF /* IGPost.swift in Sources */,
+				FF89F62A293D5576002A4663 /* ZGError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1215,6 +1218,7 @@
 			files = (
 				FF6B0FDA293662B7008C07B4 /* UIEdgeInsets+Extension.swift in Sources */,
 				FF89F61D293D3D83002A4663 /* UIView+Extension.swift in Sources */,
+				FF89F628293D4D4C002A4663 /* ErrorView.swift in Sources */,
 				86E87E882550070000ACC1EF /* AppCoordinator.swift in Sources */,
 				D37C490023B5FCA9009A6C8E /* LaunchRouter.swift in Sources */,
 				D37C490423B5FCA9009A6C8E /* LaunchInteractor.swift in Sources */,

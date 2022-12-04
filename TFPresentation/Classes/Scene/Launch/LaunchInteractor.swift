@@ -39,22 +39,26 @@ extension LaunchInteractor {
     func handleInitialize() {
         presenter?.present(isLoading: true)
         Task {
-            guard let posts = await getPosts() else { return }
-            presenter?.presentInitialize(with: posts)
-            presenter?.present(isLoading: false)
+            do {
+                let posts = try await getPosts()
+                presenter?.presentInitialize(with: posts)
+                presenter?.present(isLoading: false)
+            } catch {
+                presenter?.present(error: error)
+            }
         }
     }
     
     func handleDidRefresh() {
         Task {
-            guard let posts = await getPosts() else { return }
+            guard let posts = try? await getPosts() else { return }
             presenter?.presentRefreshedPosts(posts)
         }
     }
 }
 
 private extension LaunchInteractor {
-    func getPosts() async -> [IGPost]? {
-        return try? await postsWorker.getPosts()
+    func getPosts() async throws -> [IGPost] {
+        return try await postsWorker.getPosts()
     }
 }

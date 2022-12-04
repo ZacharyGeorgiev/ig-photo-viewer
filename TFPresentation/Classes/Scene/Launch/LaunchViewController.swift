@@ -33,6 +33,8 @@ public final class LaunchViewController: UIViewController {
         }
     }
     
+    private lazy var contentView: UIView = makeContentView()
+    private lazy var errorView: ErrorView = makeErrorView()
     private lazy var loadingIndicator: UIActivityIndicatorView = makeLoadingIndicator()
     private lazy var headerView: IGHeaderView = makeHeaderView()
     private lazy var postsTableView: UITableView = makePostsTableView()
@@ -85,6 +87,14 @@ extension LaunchViewController {
             }
         }
     }
+    
+    func display(errorViewModel: ErrorView.ViewModel) {
+        syncSafe {
+            errorView.update(with: errorViewModel)
+            showView(errorView)
+            hideView(loadingIndicator)
+        }
+    }
 }
 
 extension LaunchViewController: UITableViewDelegate {
@@ -115,28 +125,49 @@ private extension LaunchViewController {
     func setup() {
         view.backgroundColor = .white
         view.addSubviews(
-            loadingIndicator,
             headerView,
-            postsTableView
+            contentView
         )
         
+        errorView.easy.layout(
+            Left(50),
+            Right(50),
+            CenterY()
+        )
         loadingIndicator.easy.layout(Center())
         headerView.easy.layout(
             Top(),
             Left(),
             Right()
         )
-        postsTableView.easy.layout(
+        contentView.easy.layout(
             Top().to(headerView),
             Left(),
             Right(),
             Bottom()
         )
+        postsTableView.easy.layout(Edges())
     }
 }
 
 // MARK: Factory
 private extension LaunchViewController {
+    func makeContentView() -> UIView {
+        let view = UIView()
+        view.addSubviews(
+            loadingIndicator,
+            errorView,
+            postsTableView
+        )
+        return view
+    }
+    
+    func makeErrorView() -> ErrorView {
+        let errorView = ErrorView()
+        errorView.isHidden = true
+        return errorView
+    }
+    
     func makeLoadingIndicator() -> UIActivityIndicatorView {
         let loadingIndicator = UIActivityIndicatorView()
         return loadingIndicator

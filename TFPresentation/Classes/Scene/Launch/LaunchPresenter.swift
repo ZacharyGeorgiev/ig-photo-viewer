@@ -41,6 +41,10 @@ extension LaunchPresenter {
         presentInitialize(with: posts)
         displayLogic?.display(isRefreshing: false)
     }
+    
+    func present(error: Error) {
+        displayLogic?.display(errorViewModel: getErrorDescription(for: error))
+    }
 }
 
 // MARK: Private helper methods
@@ -66,5 +70,18 @@ private extension LaunchPresenter {
             return dateFormatter.string(from: date)
         }
         return date.relativeTimeString()
+    }
+    
+    func getErrorDescription(for error: Error) -> String {
+        let generalErrorMessage = "Something went wrong"
+        guard let error = error as? ZGError else {
+            return generalErrorMessage
+        }
+        switch error.type {
+        case .decoding:
+            return "Failed to decode response"
+        default:
+            return generalErrorMessage
+        }
     }
 }
